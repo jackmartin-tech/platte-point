@@ -752,7 +752,7 @@ footer{border-top:1px solid var(--line);padding-block:36px 48px;font-size:.9rem;
     </ul>
     <h2>How I use it</h2>
     <ul class="ticks">
-      <li>To reply to you, and schedule a conversation.</li>
+      <li>To reply to you and schedule a conversation.</li>
       <li>For an introduction, to follow up according to the preference you selected on the form.</li>
       <li>To understand, in aggregate, which pages on the site are useful.</li>
     </ul>
@@ -816,9 +816,12 @@ const sendForm=async(form,subject)=>{
   const fail=form.querySelector("[data-fail]"); if(fail)fail.hidden=true;
   const btn=form.querySelector("button[type=submit]");
   if(W3F_KEY==="W3F_KEY_HERE"){form.hidden=true;const s=form.nextElementSibling;s.hidden=false;s.focus();return;}
-  const data=Object.fromEntries(new FormData(form).entries());
-  if(data.botcheck)return;
-  delete data.botcheck;
+  const raw=Object.fromEntries(new FormData(form).entries());
+  if(raw.botcheck)return;
+  const LABELS={company:"Company",coord:"Coordinate with",assistant_name:"Assistant's name",assistant_contact:"Assistant's email or phone",phone:"Phone",timeframe:"Timeframe",decision:"Decision or challenge",contact_name:"Introducing",contact_company:"Their company and role",contact_reach:"Their email or phone",situation:"What's going on",how:"How to handle it"};
+  const VALUES={coord:{me:"Reach out to me directly",assistant:"Coordinate with my assistant"},how:{cc:"They'll send an email introducing us, with you copied",mention:"Reach out and mention their name",fyi:"Just a heads-up for now; don't contact them yet"}};
+  const data={name:raw.name,email:raw.email};
+  for(const k of Object.keys(LABELS)){const v=(raw[k]||"").trim(); if(!v)continue; data[LABELS[k]]=(VALUES[k]&&VALUES[k][v])||v;}
   data.access_key=W3F_KEY; data.subject=subject; data.from_name="Platte Point Advisors website";
   btn.disabled=true; const t=btn.textContent; btn.textContent="Sending…";
   try{
@@ -860,5 +863,6 @@ mb.addEventListener("click",()=>{const o=nav.classList.toggle("open");mb.setAttr
 nav.addEventListener("click",e=>{if(e.target.closest("a")){nav.classList.remove("open");mb.setAttribute("aria-expanded","false")}});
 }
 </script>
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>

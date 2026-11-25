@@ -1,561 +1,864 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Senior CIO judgment when a technology decision can't wait. Independent technology leadership for credit unions, financial institutions, and mid-market companies. Clear direction. Sound advice.">
-<title>Platte Point Advisors</title>
-<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Platte Point Advisors | Fractional and Interim CIO</title>
+<meta name="description" content="Fractional and interim CIO and executive technology advisor for owners and leadership teams. Clear direction, sound advice on AI, major vendor contracts, and transitions. Based in Traverse City, Michigan; serving clients nationally.">
+<link rel="icon" type="image/svg+xml" href="images/logo-mark.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&display=swap">
 <style>
-/* Layout: executive-minimal editorial page. White space, bold Inter, one thin red rule as the signature motif; sunrise colors live only in the logo. */
-:root {
-  --brand-red: #D63C2D;
-  --deep-red: #B52820;
-  --gold: #F4A41F;
-  --charcoal: #1F1A1C;
-  --driftwood: #5A5456;
-  --mist: #FAF7F2;
-  --bay: #163A4F;
+/*
+VOICE: calm, senior, plainspoken; executive buyers, no hype.
+IDEA: a field notebook from Platte Point: contour lines, first light, a person at work in the water.
+PICTURE: full-bleed river photo on the home hero (placeholder drawn until the shoot), line illustrations per topic.
+COLOUR and TYPE: white and morning mist, charcoal ink, Platte Red from the logo, Platte Bay blue for deep bands; Inter bold + Newsreader italic.
+LAYOUT: one page per route via #hash; dark photo hero, then light bands; drawings sit beside the text they explain.
+*/
+:root{
+  --red:#D63C2D; --deep-red:#B52820; --orange:#EE6A2E; --gold:#F4A41F;
+  --bg:#FFFFFF; --mist:#FAF7F2; --ink:#1F1A1C; --muted:#5A5456; --line:#E7E1DA;
+  --bay:#163A4F; --bay-ink:#F3EEE7; --bay-muted:#B9C6CE;
+  --link:var(--deep-red); --rule:var(--red); --btn:var(--deep-red); --btn-ink:#fff;
+  --draw:#1F1A1C; --draw-soft:#CFC6BC; --topo:#E9E2D8;
+  --head:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --quote:"Newsreader",Georgia,serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#161214; --mist:#1E191B; --ink:#F2EDE8; --muted:#B7AEAA; --line:#332B2E;
+  --bay:#0F2230; --link:#F4A41F; --rule:#E8553F; --btn:#D63C2D;
+  --draw:#F2EDE8; --draw-soft:#4A4044; --topo:#2A2326; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#161214; --mist:#1E191B; --ink:#F2EDE8; --muted:#B7AEAA; --line:#332B2E;
+  --bay:#0F2230; --link:#F4A41F; --rule:#E8553F; --btn:#D63C2D;
+  --draw:#F2EDE8; --draw-soft:#4A4044; --topo:#2A2326; color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 var(--head);-webkit-font-smoothing:antialiased;overflow-x:clip}
+a{color:var(--link);text-underline-offset:3px}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--rule);outline-offset:3px;border-radius:2px}
+h1,h2,h3{font-weight:700;line-height:1.12;letter-spacing:-.015em;margin:0;text-wrap:balance}
+p{margin:0}
+.wrap{max-width:1160px;margin:0 auto;padding-left:max(16px,4vw);padding-right:max(16px,4vw)}
+.band{padding-block:clamp(52px,7vw,96px)}
+.band.mist{background:var(--mist)}
+.band.deep{background:var(--bay);color:var(--bay-ink)}
+.label{font:600 .78rem/1.3 var(--head);color:var(--muted);letter-spacing:.02em}
+.deep .label{color:var(--bay-muted)}
+.lede{font-size:1.15rem;max-width:62ch}
+.muted{color:var(--muted)}
+.head{display:grid;gap:12px;max-width:780px;margin-bottom:36px}
+.head h2{font-size:clamp(1.7rem,3.3vw,2.5rem)}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--btn);color:var(--btn-ink);text-decoration:none;font-weight:600;font-size:.96rem;padding:13px 22px;border-radius:3px;border:0;cursor:pointer;min-height:44px}
+.btn:hover{filter:brightness(1.08)}
+.btn.ghost{background:transparent;color:inherit;border:1.5px solid currentColor}
+.quote{font-family:var(--quote);font-style:italic}
+.ph{background:repeating-linear-gradient(135deg,transparent 0 8px,color-mix(in srgb,var(--gold) 16%,transparent) 8px 16px);border-left:3px solid var(--gold);padding:10px 14px;border-radius:2px}
+.ph-tag{display:inline-block;font:600 .72rem/1 var(--head);background:var(--gold);color:#1F1A1C;padding:4px 7px;border-radius:2px;margin-bottom:8px}
+.proto{background:#1F1A1C;color:#F3EEE7;font-size:.8rem;text-align:center;padding:7px 16px}
 
-  --bg: #FFFFFF;
-  --bg-alt: var(--mist);
-  --fg: var(--charcoal);
-  --muted: var(--driftwood);
-  --link: var(--deep-red);
-  --rule-color: var(--brand-red);
-  --line: #E7E1DA;
-  --btn-bg: var(--deep-red);
-  --btn-fg: #FFFFFF;
-  --dark-band: var(--bay);
-  --dark-band-fg: #F3EEE7;
-  --dark-band-muted: #B9C6CE;
-  --dark-accent: var(--gold);
-  --horizon: #CFC6BC;
-
-  --font-head: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-quote: "Newsreader", Georgia, "Times New Roman", serif;
-  --measure: 68ch;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #161214; --bg-alt: #1E191B; --fg: #F2EDE8; --muted: #B7AEAA;
-    --link: #F4A41F; --rule-color: #E8553F; --line: #332B2E;
-    --btn-bg: #D63C2D; --btn-fg: #FFFFFF;
-    --dark-band: #0F2230; --dark-band-fg: #F3EEE7; --dark-band-muted: #9FB2BE;
-    --horizon: #3A3134;
-    color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --bg: #161214; --bg-alt: #1E191B; --fg: #F2EDE8; --muted: #B7AEAA;
-  --link: #F4A41F; --rule-color: #E8553F; --line: #332B2E;
-  --btn-bg: #D63C2D; --btn-fg: #FFFFFF;
-  --dark-band: #0F2230; --dark-band-fg: #F3EEE7; --dark-band-muted: #9FB2BE;
-  --horizon: #3A3134;
-  color-scheme: dark;
-}
-
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-body {
-  background: var(--bg); color: var(--fg);
-  font: 400 1.0625rem/1.65 var(--font-body);
-  -webkit-font-smoothing: antialiased;
-}
-body::before {
-  content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px);
-  z-index: 10; background: var(--bg);
-}
-a { color: var(--link); text-underline-offset: 3px; }
-a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--rule-color); outline-offset: 3px; border-radius: 2px; }
-h1, h2, h3 { font-family: var(--font-head); font-weight: 700; line-height: 1.12; text-wrap: balance; margin: 0; letter-spacing: -0.015em; }
-p { margin: 0; }
-
-.wrap {
-  max-width: 1120px; margin: 0 auto;
-  padding-left: max(16px, env(safe-area-inset-left, 0px));
-  padding-right: max(16px, env(safe-area-inset-right, 0px));
-}
-.band { padding-block: clamp(56px, 8vw, 104px); }
-.band.alt { background: var(--bg-alt); }
-.label {
-  font: 600 0.75rem/1.3 var(--font-body); letter-spacing: 0.12em; text-transform: uppercase;
-  color: var(--muted);
-}
-.proto-note { background: #1F1A1C; color: #F3EEE7; font-size: 0.8125rem; text-align: center; padding-block: 8px; }
-
-/* Header */
-header.site {
-  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
-  background: color-mix(in srgb, var(--bg) 94%, transparent);
-  backdrop-filter: saturate(140%) blur(8px);
-  border-bottom: 1px solid var(--line);
-}
-.site-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-block: 14px; }
-.brand { display: flex; align-items: center; gap: 14px; text-decoration: none; color: var(--fg); }
-.brand img { width: 52px; height: auto; display: block; }
-.brand .divider { width: 2px; align-self: stretch; background: var(--rule-color); }
-.brand .name { display: flex; flex-direction: column; line-height: 1.15; }
-.brand .name strong { font-weight: 700; font-size: 1.05rem; letter-spacing: -0.01em; }
-.brand .name span { font-size: 0.78rem; color: var(--muted); font-style: italic; }
-nav.primary { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; }
-nav.primary a { color: var(--fg); text-decoration: none; font-size: 0.92rem; font-weight: 500; }
-nav.primary a:hover { color: var(--link); }
-.btn {
-  display: inline-flex; align-items: center; gap: 8px;
-  background: var(--btn-bg); color: var(--btn-fg); text-decoration: none;
-  font-weight: 600; font-size: 0.95rem; padding: 12px 20px; border-radius: 3px; border: 0; cursor: pointer;
-}
-.btn:hover { filter: brightness(1.08); }
-nav.primary .btn { color: var(--btn-fg); padding: 9px 16px; font-size: 0.88rem; }
-.menu-toggle { display: none; background: none; border: 1px solid var(--line); color: var(--fg); padding: 8px 12px; border-radius: 3px; font: 500 0.9rem var(--font-body); cursor: pointer; }
-@media (max-width: 880px) {
-  .menu-toggle { display: inline-block; }
-  nav.primary { display: none; position: absolute; left: 0; right: 0; top: 100%;
-    background: var(--bg); border-bottom: 1px solid var(--line);
-    flex-direction: column; align-items: flex-start; gap: 14px;
-    padding: 18px max(16px, env(safe-area-inset-right, 0px)) 22px max(16px, env(safe-area-inset-left, 0px)); }
-  nav.primary.open { display: flex; }
-  .site-inner { position: relative; }
+/* header */
+header.site{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:12px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
+.brand img{width:48px;height:auto;display:block}
+.brand .rule{width:2px;align-self:stretch;background:var(--rule)}
+.brand b{display:block;font-size:1.02rem;letter-spacing:-.01em}
+.brand i{display:block;font-size:.76rem;color:var(--muted)}
+nav.main{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+nav.main a{color:var(--ink);text-decoration:none;font-weight:500;font-size:.93rem}
+nav.main a[aria-current="page"]{color:var(--link);box-shadow:inset 0 -2px 0 var(--rule)}
+nav.main .btn{color:#fff;padding:9px 16px;font-size:.88rem;min-height:40px}
+.menu{display:none;background:none;border:1px solid var(--line);color:var(--ink);padding:9px 14px;border-radius:3px;font:500 .9rem var(--head);min-height:44px;cursor:pointer}
+@media (max-width:900px){
+  .menu{display:inline-block}
+  nav.main{display:none;position:absolute;left:0;right:0;top:100%;background:var(--bg);border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:16px;padding:20px max(16px,4vw) 24px}
+  nav.main.open{display:flex}
+  .bar{position:relative}
 }
 
-/* Hero: quiet, typographic, a single horizon line where the photo will go */
-.hero { position: relative; background: var(--bg-alt); border-bottom: 1px solid var(--line); }
-.hero-content { padding-block: clamp(64px, 10vw, 128px) clamp(64px, 9vw, 112px); display: grid; gap: 24px; }
-.hero h1 { font-size: clamp(2.3rem, 5.6vw, 4.25rem); max-width: 17ch; letter-spacing: -0.03em; }
-.hero h1 em { font-style: normal; color: var(--brand-red); }
-.hero .sub { max-width: 60ch; font-size: clamp(1.05rem, 1.6vw, 1.22rem); }
-.hero .actions { margin-top: 10px; display: flex; gap: 18px; align-items: center; flex-wrap: wrap; }
-.hero .actions .assure { color: var(--muted); font-size: 0.95rem; }
-.horizon { height: 1px; background: var(--horizon); margin-top: 20px; position: relative; }
-.horizon span { position: absolute; right: 0; top: 8px; font-size: 0.75rem; color: var(--muted); }
+/* pages */
+.page{display:none}
+.page.on{display:block}
 
-/* Independence strip */
-.indep { border-bottom: 1px solid var(--line); }
-.indep-inner { display: flex; gap: 16px; align-items: center; padding-block: 20px; flex-wrap: wrap; }
-.indep-badge { font: 700 0.75rem/1 var(--font-body); letter-spacing: 0.12em; text-transform: uppercase; color: var(--btn-fg); background: var(--charcoal); padding: 7px 10px; border-radius: 2px; }
-:root[data-theme="dark"] .indep-badge { background: #F2EDE8; color: #161214; }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .indep-badge { background: #F2EDE8; color: #161214; } }
-.indep p { font-weight: 500; min-width: 0; flex: 1 1 320px; }
+/* hero */
+.hero{position:relative;min-height:min(78vh,720px);display:grid;align-items:center;color:#fff;overflow:hidden;background:#2B3A40}
+.hero img.scene{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:52% 42%}
+.hero .shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(18,16,18,.8) 0%,rgba(18,16,18,.62) 30%,rgba(18,16,18,.05) 46%,rgba(18,16,18,0) 100%),linear-gradient(0deg,rgba(18,16,18,.45),rgba(18,16,18,0) 40%)}
+.hero .wrap{position:relative;padding-block:clamp(56px,7vw,96px);width:100%}
+.hero .label{color:#F1E6DA}
+.hero h1{font-size:clamp(2.1rem,3.6vw,3.1rem);max-width:17ch;margin-top:16px;letter-spacing:-.03em}
+.hero .sub{margin-top:18px;max-width:40ch;font-size:clamp(1rem,1.3vw,1.12rem);color:#F6F0E8}
+.hero .acts{margin-top:30px;display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+.hero .acts span{color:#EADFD2;font-size:.95rem}
+@media (max-width:600px){.hero .shade{background:linear-gradient(180deg,rgba(18,16,18,.7),rgba(18,16,18,.6) 60%,rgba(18,16,18,.35))}.hero img.scene{object-position:47% 40%}}
+.hero .note{position:absolute;right:max(16px,4vw);bottom:14px;font-size:.74rem;color:#F1E6DA;background:rgba(0,0,0,.35);padding:4px 8px;border-radius:2px;max-width:60%}
 
-/* Section heads */
-.head { display: grid; gap: 14px; max-width: 780px; margin-bottom: 40px; }
-.head h2 { font-size: clamp(1.75rem, 3.4vw, 2.6rem); }
-.head p { color: var(--muted); max-width: var(--measure); }
+/* independence strip */
+.indep{border-bottom:1px solid var(--line)}
+.indep .wrap{display:flex;gap:16px;align-items:center;flex-wrap:wrap;padding-block:18px}
+.indep b{font-size:.74rem;letter-spacing:.06em;background:var(--ink);color:var(--bg);padding:6px 10px;border-radius:2px}
+.indep p{font-weight:500;flex:1 1 320px}
 
-/* Moments as expandable cases */
-.moments { display: grid; gap: 0; border-top: 1px solid var(--line); }
-.moments details { border-bottom: 1px solid var(--line); }
-.moments summary {
-  list-style: none; cursor: pointer; display: grid; grid-template-columns: 1fr auto; gap: 16px; align-items: center;
-  padding: 20px 0 20px 22px; position: relative; font-size: 1.1rem; font-weight: 500;
+/* moments */
+.moments{border-top:1px solid var(--line)}
+.moments details{border-bottom:1px solid var(--line)}
+.moments summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:44px 1fr auto;gap:16px;align-items:center;padding:18px 0;font-size:1.06rem;font-weight:500}
+.moments summary::-webkit-details-marker{display:none}
+.moments summary svg{width:40px;height:40px;color:var(--draw)}
+.moments .tog{font-size:.85rem;color:var(--link);font-weight:600;white-space:nowrap}
+.moments details[open] .tog::after{content:" \2191"}
+.moments details:not([open]) .tog::after{content:" \2193"}
+.moments .ans{padding:0 0 22px 60px;max-width:76ch}
+@media (max-width:600px){.moments summary{grid-template-columns:34px 1fr}.moments .tog{grid-column:2}.moments summary svg{width:32px;height:32px}.moments .ans{padding-left:0}}
+
+/* cards / grids */
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+@media (max-width:960px){.grid4{grid-template-columns:repeat(2,minmax(0,1fr))}.grid3{grid-template-columns:1fr}}
+@media (max-width:620px){.grid4,.grid2{grid-template-columns:1fr}}
+.job{display:grid;gap:12px;align-content:start;padding-top:20px;border-top:2px solid var(--rule)}
+.job h3{font-size:1.3rem}
+.payoff{font-family:var(--quote);font-style:italic;font-size:1.15rem;color:var(--muted)}
+.card{border:1px solid var(--line);background:var(--bg);padding:26px;display:grid;gap:12px;align-content:start}
+.card h3{font-size:1.18rem}
+.cred{font-size:.92rem;color:var(--muted);border-left:2px solid var(--rule);padding-left:12px}
+.eng{border:1px solid var(--line);background:var(--bg);padding:24px;display:grid;gap:10px;align-content:start;text-decoration:none;color:inherit}
+.eng:hover{border-color:var(--rule)}
+.eng.lead{border-top:3px solid var(--rule)}
+.offers .eng{padding:28px}
+.eng .k{font-size:.8rem;color:var(--muted);font-weight:600}
+.eng h3{font-size:1.2rem}
+.eng .t{font-size:.86rem;color:var(--link);font-weight:600}
+
+/* waiting */
+.wait{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:48px;align-items:start}
+.wait ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.wait li{padding:15px 0;border-bottom:1px solid var(--line);display:grid;gap:3px}
+.wait li span{color:var(--muted)}
+@media (max-width:820px){.wait{grid-template-columns:1fr;gap:24px}}
+
+/* compare table */
+table.cmp{width:100%;border-collapse:collapse}
+.cmp th{text-align:left;font-size:.8rem;color:var(--muted);font-weight:600;padding:0 18px 12px 0}
+.cmp td{padding:16px 18px 16px 0;border-top:1px solid var(--line);vertical-align:top}
+.cmp td:first-child{color:var(--muted);width:48%}
+.cmp td:last-child{font-weight:600}
+@media (max-width:600px){.cmp thead{display:none}.cmp tr{display:grid;padding-block:8px;border-top:1px solid var(--line)}.cmp td{border:0;padding:4px 0}.cmp td:first-child{width:auto}}
+
+
+/* fractional vs interim table */
+.fx-wrap{overflow-x:auto}
+table.fx{width:100%;border-collapse:collapse;font-size:.98rem}
+.fx thead th{text-align:left;font-size:1.08rem;font-weight:700;padding:0 20px 14px 0;border-bottom:2px solid var(--rule)}
+.fx tbody th,.fx tfoot th{text-align:left;font-weight:600;color:var(--muted);font-size:.86rem;padding:16px 20px 16px 0;vertical-align:top;width:20%}
+.fx td{padding:16px 20px 16px 0;border-top:1px solid var(--line);vertical-align:top;width:40%}
+.fx tbody tr:first-child td,.fx tbody tr:first-child th{border-top:0}
+.fx tbody th{border-top:1px solid var(--line)}
+.fx tfoot th,.fx tfoot td{background:var(--mist);border-top:2px solid var(--rule);padding:18px 20px}
+.fx tfoot th{color:var(--link)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+@media (max-width:700px){
+  .fx thead{display:none}
+  .fx tr{display:grid;grid-template-columns:1fr 1fr;gap:4px 14px;padding:12px 0;border-top:1px solid var(--line)}
+  .fx tbody th,.fx tfoot th{grid-column:1/-1;width:auto;padding:0;border:0}
+  .fx td{width:auto;padding:0;border:0;font-size:.92rem}
+  .fx tbody td:nth-of-type(1)::before{content:"Fractional";display:block;font-weight:700;font-size:.78rem}
+  .fx tbody td:nth-of-type(2)::before{content:"Interim";display:block;font-weight:700;font-size:.78rem}
+  .fx tfoot tr{padding:16px;background:var(--mist)} .fx tfoot td{grid-column:1/-1;background:none}
+  .fx tfoot th{background:none}
 }
-.moments summary::-webkit-details-marker { display: none; }
-.moments summary::before { content: ""; position: absolute; left: 0; top: 22px; bottom: 22px; width: 2px; background: var(--rule-color); }
-.moments summary .toggle { font-size: 0.85rem; color: var(--link); font-weight: 600; white-space: nowrap; }
-.moments details[open] summary .toggle::after { content: " ↑"; }
-.moments details:not([open]) summary .toggle::after { content: " ↓"; }
-.moments .first48 { padding: 0 0 24px 22px; display: grid; gap: 8px; max-width: 72ch; }
-.moments .first48 .label { color: var(--muted); }
 
-/* Jobs */
-.jobs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
-.job { display: grid; gap: 14px; align-content: start; padding-top: 22px; border-top: 2px solid var(--rule-color); }
-.job h3 { font-size: 1.35rem; }
-.job .payoff { font-family: var(--font-quote); font-style: italic; font-size: 1.15rem; color: var(--muted); }
-@media (max-width: 900px) { .jobs { grid-template-columns: 1fr; } }
+/* v4 home what-band, about */
+.what-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:48px;align-items:start}
+.what h2{font-size:clamp(1.7rem,3.2vw,2.4rem);margin-top:12px}
+.what-pts{display:grid;gap:18px;font-size:1.05rem}
+.what-pts ul{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.what-pts li{border-left:2px solid var(--gold);padding-left:14px;color:var(--bay-ink)}
+.what-pts li b{color:#fff}
+@media (max-width:820px){.what-grid{grid-template-columns:1fr;gap:20px}}
+.sig figcaption{color:var(--muted);font-size:.98rem}
+.about-hero h1{font-size:clamp(1.6rem,2.8vw,2.2rem);margin:10px 0 18px}
+.about-hero .prose p{font-size:1.04rem}
+.lead-grid h2{font-size:clamp(1.6rem,3vw,2.2rem);margin-top:12px}
+.personal{gap:56px;align-items:start}
+/* contact */
+[hidden]{display:none!important}
+nav.main .btn[aria-current]{color:#fff;box-shadow:none}
+.contact-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:56px;align-items:start}
+.contact-grid h1{font-size:clamp(1.8rem,3.4vw,2.6rem);margin-top:12px;max-width:22ch}
+@media (max-width:900px){.contact-grid{grid-template-columns:1fr;gap:36px}}
+.cform{display:grid;gap:18px;margin-top:32px;max-width:640px}
+.cform .f{display:grid;gap:6px;border:0;margin:0;padding:0}
+.cform .f2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:560px){.cform .f2{grid-template-columns:1fr}}
+.cform label,.cform legend{font-weight:600;font-size:.94rem;padding:0}
+.cform .req{font-weight:400;color:var(--muted);font-size:.84rem}
+.cform input:not([type=radio]),.cform textarea{font:inherit;font-size:1rem;padding:11px 12px;border:1px solid var(--line);border-radius:3px;background:var(--bg);color:var(--ink);width:100%}
+.cform input:focus,.cform textarea:focus{outline:2px solid var(--rule);outline-offset:1px;border-color:transparent}
+.cform fieldset{display:grid;gap:10px}
+.cform .opt{font-weight:400;display:flex;gap:10px;align-items:center;cursor:pointer}
+.cform .opt input{accent-color:var(--red);width:18px;height:18px}
+.cform .asst{margin-top:4px}
+.cform .hp{position:absolute;left:-9999px}
+.cform .btn{justify-self:start}
+.cform .fine{font-size:.86rem}
+.cform .fh{font-size:1.05rem;margin-top:8px;padding-top:14px;border-top:1px solid var(--line)}
+.cform .fh:first-child{border-top:0;padding-top:0;margin-top:0}
+.err{color:var(--deep-red);font-weight:600}
+.sent{margin-top:32px;border-left:3px solid var(--rule);padding:6px 0 6px 20px;display:grid;gap:12px;max-width:60ch}
+.sent h2{font-size:1.6rem}
+.next{background:var(--mist);padding:30px;border-top:3px solid var(--rule)}
+.next h2{font-size:1.3rem}
+.next ol{margin:16px 0 0;padding-left:1.2em;display:grid;gap:12px}
+.pp-map{margin:28px 0 0;max-width:380px;color:var(--draw)}
+.pp-map svg{width:100%;height:auto;display:block}
+.roi{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin:16px 0;padding:14px 0;border-top:2px solid var(--rule);border-bottom:1px solid var(--line)}
+.roi b{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;color:var(--link);letter-spacing:-.02em;line-height:1}
+.roi span{color:var(--muted);font-size:.95rem;max-width:30ch}
+details .ans p+p{margin-top:8px}
+.privacy h2{font-size:1.25rem;margin-top:28px}
+.privacy{max-width:70ch}
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:34px 40px;margin-top:36px}
+.stat{display:grid;gap:6px;border-left:2px solid var(--gold);padding-left:18px}
+.stat b{font-size:clamp(1.9rem,3.6vw,2.6rem);letter-spacing:-.02em;line-height:1.05;font-variant-numeric:tabular-nums}
+.stat span{color:var(--bay-muted);font-size:.95rem}
+@media (max-width:760px){.stats{grid-template-columns:1fr 1fr}}
+@media (max-width:440px){.stats{grid-template-columns:1fr}}
 
-/* Sectors */
-.sectors { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
-.sector { display: grid; gap: 12px; align-content: start; padding: 26px; border: 1px solid var(--line); background: var(--bg); }
-.sector h3 { font-size: 1.2rem; }
-.sector .cred { font-size: 0.9rem; color: var(--muted); border-left: 2px solid var(--rule-color); padding-left: 12px; }
-@media (max-width: 900px) { .sectors { grid-template-columns: 1fr; } }
+/* illustrations */
+.ill{color:var(--draw)}
+.ill .acc{stroke:var(--red)}
+.ill .accf{fill:var(--red)}
+.ill .soft{stroke:var(--draw-soft)}
+.area{display:grid;gap:14px;align-content:start}
+.area svg{width:100%;max-width:220px;height:auto;aspect-ratio:4/3}
+.area h3{font-size:1.12rem}
+.area .q{font-family:var(--quote);font-style:italic;font-size:1.12rem}
 
-/* Cost of waiting */
-.waiting { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 48px; align-items: start; }
-.waiting h2 { font-size: clamp(1.75rem, 3.4vw, 2.6rem); }
-.waiting .lede { margin-top: 16px; color: var(--muted); max-width: 46ch; }
-.waiting ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; border-top: 1px solid var(--line); }
-.waiting li { padding: 16px 0; border-bottom: 1px solid var(--line); display: grid; gap: 4px; }
-.waiting li b { font-weight: 600; }
-.waiting li span { color: var(--muted); }
-@media (max-width: 820px) { .waiting { grid-template-columns: 1fr; gap: 28px; } }
+/* topo background */
+.topo{position:relative;overflow:hidden}
+.topo>svg.contours{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;color:var(--topo);opacity:.7}
+.topo>.wrap{position:relative}
 
-/* Fired vs hired */
-.compare-wrap { overflow-x: auto; }
-.compare { width: 100%; border-collapse: collapse; font-size: 1rem; }
-.compare th { text-align: left; font: 600 0.75rem/1 var(--font-body); letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); padding: 0 20px 14px 0; }
-.compare td { padding: 18px 20px 18px 0; border-top: 1px solid var(--line); vertical-align: top; }
-.compare td:first-child { color: var(--muted); width: 48%; }
-.compare td:last-child { font-weight: 600; }
+/* signature */
+.sig{border-left:2px solid var(--rule);padding-left:clamp(18px,3vw,36px);max-width:900px;display:grid;gap:16px;margin:0}
+.sig blockquote{margin:0;font-family:var(--quote);font-style:italic;font-size:clamp(1.55rem,3.2vw,2.4rem);line-height:1.28}
+.sig cite{font-style:normal;font-weight:600}
 
-/* Engagements mapped to jobs */
-.engage { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border: 1px solid var(--line); background: var(--bg); }
-.eng { padding: 26px 24px; display: grid; gap: 10px; align-content: start; }
-.eng + .eng { border-left: 1px solid var(--line); }
-.eng .job-of { font: 600 0.75rem/1.3 var(--font-body); letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
-.eng h3 { font-size: 1.25rem; }
-.eng .time { font-size: 0.85rem; color: var(--link); font-weight: 600; }
-@media (max-width: 980px) { .engage { grid-template-columns: 1fr 1fr; } .eng:nth-child(3) { border-left: 0; } .eng:nth-child(n+3) { border-top: 1px solid var(--line); } }
-@media (max-width: 560px) { .engage { grid-template-columns: 1fr; } .eng + .eng { border-left: 0; border-top: 1px solid var(--line); } }
+/* invite */
+.invite{display:grid;grid-template-columns:1.15fr 1fr;gap:48px;align-items:start}
+.invite .tag{font-weight:700;color:var(--red);font-size:1.4rem}
+.invite ol{margin:18px 0 0;padding-left:1.3em;display:grid;gap:8px}
+.cc{border:1px solid var(--line);background:var(--bg);padding:26px;display:grid;gap:14px}
+.cc .row{display:grid;grid-template-columns:18px 1fr;gap:10px}
+.cc .row b{color:var(--red)}
+.sel{user-select:all;overflow-wrap:anywhere}
+.copy{background:none;border:1px solid var(--line);color:var(--ink);font:500 .8rem var(--head);padding:4px 10px;border-radius:3px;cursor:pointer;margin-left:8px}
+@media (max-width:820px){.invite{grid-template-columns:1fr}}
 
-/* Proof */
-.proof { background: var(--dark-band); color: var(--dark-band-fg); }
-.proof .label { color: var(--dark-band-muted); }
-.proof h2 { color: var(--dark-band-fg); font-size: clamp(1.75rem, 3.4vw, 2.6rem); margin-top: 14px; max-width: 26ch; }
-.stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 36px 40px; margin-top: 40px; }
-.stat { display: grid; gap: 6px; border-left: 2px solid var(--dark-accent); padding-left: 18px; }
-.stat b { font-size: clamp(1.9rem, 3.6vw, 2.6rem); font-weight: 700; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; line-height: 1.05; }
-.stat span { color: var(--dark-band-muted); font-size: 0.95rem; }
-.proof .footnote { margin-top: 36px; font-size: 0.82rem; color: var(--dark-band-muted); }
-@media (max-width: 760px) { .stats { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 440px) { .stats { grid-template-columns: 1fr; } }
+/* page heads */
+.phead{background:var(--mist);border-bottom:1px solid var(--line)}
+.phead .wrap{padding-block:clamp(48px,7vw,88px);display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:40px;align-items:center}
+.phead h1{font-size:clamp(2rem,4.6vw,3.3rem);margin-top:12px}
+.phead .lede{margin-top:16px}
+.phead svg{width:100%;max-width:340px;justify-self:end;height:auto}
+@media (max-width:760px){.phead .wrap{grid-template-columns:1fr}.phead svg{max-width:240px;justify-self:start}}
 
-/* AI trust + memo */
-.duo { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
-.panel { border: 1px solid var(--line); background: var(--bg); padding: 28px; display: grid; gap: 12px; align-content: start; }
-.panel h3 { font-size: 1.3rem; }
-.panel p { color: var(--fg); }
-.panel .memo-title { font-family: var(--font-quote); font-style: italic; font-size: 1.25rem; line-height: 1.35; }
-@media (max-width: 820px) { .duo { grid-template-columns: 1fr; } }
+/* situation stories */
+.story{display:grid;grid-template-columns:64px 1fr;gap:20px;padding-block:30px;border-top:1px solid var(--line)}
+.story svg{width:56px;height:56px}
+.story h3{font-size:1.3rem}
+.beats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 32px;margin-top:14px}
+.beats div{display:grid;gap:2px}
+.beats b{font-size:.8rem;color:var(--muted)}
+.beats .help{grid-column:1/-1;border-left:2px solid var(--rule);padding-left:14px}
+@media (max-width:700px){.story{grid-template-columns:1fr}.beats{grid-template-columns:1fr}}
 
-/* Signature */
-.signature { display: grid; gap: 18px; max-width: 900px; border-left: 2px solid var(--rule-color); padding-left: clamp(18px, 3vw, 36px); margin: 0; }
-.signature blockquote { margin: 0; font-family: var(--font-quote); font-style: italic; font-size: clamp(1.6rem, 3.4vw, 2.5rem); line-height: 1.28; }
-.signature cite { font-style: normal; font-weight: 600; }
-.signature cite span { color: var(--muted); font-weight: 400; }
+/* lists */
+ul.ticks{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+ul.ticks li{padding-left:22px;position:relative}
+ul.ticks li::before{content:"";position:absolute;left:0;top:.62em;width:10px;height:2px;background:var(--rule)}
+.tbl{width:100%;border-collapse:collapse}
+.tbl th{text-align:left;font-size:.8rem;color:var(--muted);font-weight:600;padding:0 16px 10px 0;border-bottom:1px solid var(--line)}
+.tbl td{padding:14px 16px 14px 0;border-bottom:1px solid var(--line);vertical-align:top}
+@media (max-width:700px){.tbl thead{display:none}.tbl tr{display:grid;padding:10px 0;border-bottom:1px solid var(--line)}.tbl td{border:0;padding:3px 0}.tbl td:first-child{font-weight:700}}
 
-/* Invitation */
-.invite { display: grid; grid-template-columns: 1.15fr 1fr; gap: 48px; align-items: start; }
-.invite .tagline { font: 700 clamp(1.3rem, 2.2vw, 1.6rem)/1.2 var(--font-head); color: var(--brand-red); letter-spacing: -0.01em; }
-.invite h2 { font-size: clamp(1.8rem, 3.4vw, 2.6rem); margin-top: 12px; }
-.invite p.body { margin-top: 16px; max-width: 52ch; }
-.three-q { margin: 22px 0 0; padding: 0; list-style: none; display: grid; gap: 10px; counter-reset: q; }
-.three-q li { counter-increment: q; display: grid; grid-template-columns: 28px 1fr; gap: 8px; }
-.three-q li::before { content: counter(q); font-weight: 700; color: var(--brand-red); }
-.contact-card { border: 1px solid var(--line); background: var(--bg); padding: 28px; display: grid; gap: 16px; }
-.contact-card .row { display: grid; grid-template-columns: 18px 1fr; gap: 10px; align-items: baseline; }
-.contact-card .row b { color: var(--brand-red); font-size: 0.9rem; }
-.contact-card .sel { user-select: all; overflow-wrap: anywhere; }
-.copy { background: none; border: 1px solid var(--line); color: var(--fg); font: 500 0.8rem var(--font-body); padding: 4px 10px; border-radius: 3px; cursor: pointer; margin-left: 8px; }
-@media (max-width: 820px) { .invite { grid-template-columns: 1fr; } }
+/* route */
+.route svg{width:100%;height:auto}
+.stages{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;margin-top:20px}
+.stages div{display:grid;gap:6px}
+.stages b{font-size:1.1rem}
+@media (max-width:760px){.stages{grid-template-columns:1fr 1fr}}
+@media (max-width:440px){.stages{grid-template-columns:1fr}}
 
-footer { border-top: 1px solid var(--line); padding-block: 36px 48px; font-size: 0.88rem; color: var(--muted); }
-.foot { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
-.foot .tagline { font-family: var(--font-quote); font-style: italic; font-size: 1.05rem; color: var(--fg); }
+/* about */
+.about-top{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:48px;align-items:start}
+.photo-ph{aspect-ratio:4/5;background:linear-gradient(180deg,#E8D9C6,#C9B49A 60%,#8E9A9A);border-radius:2px;display:grid;place-items:end start;padding:14px;color:#1F1A1C;font-size:.8rem;font-weight:600}
+.photo-ph.wide{aspect-ratio:4/3}
+.prose{display:grid;gap:18px;max-width:68ch}
+.prose h2{font-size:1.35rem;margin-top:12px}
+.timeline{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:10px;margin-top:8px}
+.timeline div{border-top:2px solid var(--line);padding-top:10px;font-size:.84rem}
+.timeline div:last-child{border-color:var(--rule)}
+.timeline b{display:block;font-size:.78rem;color:var(--muted)}
+@media (max-width:900px){.about-top{grid-template-columns:1fr}.timeline{grid-template-columns:1fr 1fr}}
+
+
+.photo{display:block;width:100%;height:auto;border-radius:4px;box-shadow:0 18px 40px -24px rgba(20,16,18,.45)}
+.photo-frame{position:relative}
+.photo-frame::after{content:"";position:absolute;inset:14px -14px -14px 14px;border:2px solid var(--rule);border-radius:4px;z-index:-1}
+.photo-frame{isolation:isolate}
+.photo.arch{border-radius:999px 999px 6px 6px}
+.cap{font-size:.86rem;color:var(--muted);margin-top:10px}
+.bay{display:block;width:100%;height:auto;aspect-ratio:16/6;object-fit:cover;border-radius:4px;margin:6px 0 4px}
+/* home redesign */
+.hero{min-height:min(70vh,660px)}
+@media (min-width:1500px){.hero img.scene{object-position:52% 46%}}
+.cred-bar{border-bottom:1px solid var(--line);background:var(--bg)}
+.cred-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;padding-block:26px}
+.cred-grid div{display:grid;gap:4px;border-left:2px solid var(--rule);padding-left:14px}
+.cred-grid b{font-size:1.35rem;letter-spacing:-.01em}
+.cred-grid span{font-size:.9rem;color:var(--muted)}
+.cred-grid .indep-cell{border-left-color:var(--ink)}
+@media (max-width:900px){.cred-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.cred-grid{grid-template-columns:1fr}}
+.meet{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.4fr);gap:48px;align-items:center}
+@media (max-width:820px){.meet{grid-template-columns:1fr}.meet .photo-ph{max-width:320px}}
+.jump{display:flex;gap:10px 22px;flex-wrap:wrap;padding-block:18px;border-bottom:1px solid var(--line);font-size:.92rem}
+.jump a{text-decoration:none;font-weight:600}
+.svc-grid{display:grid;grid-template-columns:minmax(0,.55fr) minmax(0,1.45fr);gap:44px;align-items:start}
+.svc-grid>svg{width:100%;max-width:240px;height:auto}
+.svc-grid h2{font-size:clamp(1.6rem,3vw,2.2rem)}
+@media (max-width:760px){.svc-grid{grid-template-columns:1fr}.svc-grid>svg{max-width:180px}}
+.post{border:1px solid var(--line);background:var(--bg);padding:24px;display:grid;gap:10px;align-content:start}
+.post .meta{font-size:.8rem;color:var(--muted);display:flex;gap:10px;flex-wrap:wrap}
+.post .pill{font-size:.74rem;font-weight:600;background:var(--mist);border:1px solid var(--line);padding:2px 8px;border-radius:999px;color:var(--ink)}
+.post h3{font-size:1.15rem}
+.topics{display:flex;gap:8px;flex-wrap:wrap}
+.topics button{background:var(--bg);border:1px solid var(--line);color:var(--ink);font:500 .88rem var(--head);padding:8px 14px;border-radius:999px;cursor:pointer;min-height:40px}
+.topics button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+
+footer{border-top:1px solid var(--line);padding-block:36px 48px;font-size:.9rem;color:var(--muted)}
+.foot{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.foot .t{font-family:var(--quote);font-style:italic;font-size:1.08rem;color:var(--ink)}
 </style>
 </head>
 <body>
+<!-- drawing library -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- moment icons: 48x48 line drawings -->
+    <symbol id="i-table" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22h36"/><path d="M10 22v16M38 22v16"/><circle cx="12" cy="12" r="3"/><circle cx="24" cy="12" r="3"/><circle cx="36" cy="12" r="3" class="acc" stroke-dasharray="2 3"/></g></symbol>
+    <symbol id="i-seat" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 8v22h20V8" class="acc" stroke-dasharray="3 3"/><path d="M12 30h24v6H12z"/><path d="M14 36v6M34 36v6"/></g></symbol>
+    <symbol id="i-ai" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="24" cy="24" r="5" class="acc"/><circle cx="9" cy="12" r="3"/><circle cx="39" cy="12" r="3"/><circle cx="9" cy="36" r="3"/><circle cx="39" cy="36" r="3"/><path d="M12 14l8 7M36 14l-8 7M12 34l8-7M36 34l-8-7"/></g></symbol>
+    <symbol id="i-contract" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6h18l8 8v28H12z"/><path d="M30 6v8h8"/><path d="M17 22h14M17 28h14M17 34h7"/><path d="M27 38l8-8 3 3-8 8h-3z" class="acc"/></g></symbol>
+    <symbol id="i-spend" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 42h36"/><path d="M10 42V32M18 42V26M26 42V20M34 42V12"/><path d="M8 26l10-8 8 4 14-12" class="acc"/><path d="M34 10h6v6" class="acc"/></g></symbol>
+    <symbol id="i-shield" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 5l15 6v11c0 10-6.5 17-15 21C15.5 39 9 32 9 22V11z"/><path d="M17 24l5 5 9-10" class="acc"/></g></symbol>
+    <symbol id="i-merge" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 10c10 0 12 14 18 14"/><path d="M6 38c10 0 12-14 18-14" class="acc"/><path d="M24 24h18"/><path d="M37 19l5 5-5 5"/></g></symbol>
 
+    <!-- area illustrations: 240x180 -->
+    <symbol id="a-compass" viewBox="0 0 240 180"><g fill="none"  stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round" style="stroke:var(--draw-soft)"><path d="M12 38c17-13 35-13 52 0s35 13 52 0 35-13 52 0 35 13 60-1"/><path d="M14 55c13-9 26-9 39 0s26 9 39 0"/><path d="M154 55c12-9 25-9 38 0s25 9 35 1"/><path d="M11 132c17-12 35-12 53 0s35 12 53 0"/><path d="M156 133c12-10 25-10 38 0s25 10 34 2"/><path d="M26 18c9 5 15 13 18 23M211 20c-10 5-17 13-20 24M25 159c10-5 17-12 21-22M211 158c-10-5-17-12-21-22"/></g><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="120" cy="91" r="50"/><circle cx="120" cy="91" r="43"/><path d="M120 46v7m0 76v7M75 91h7m76 0h7M88.2 59.2l5 5m53.6 53.6 5 5m0-63.6-5 5m-53.6 53.6-5 5"/><path d="M120 58l8 25 25 8-25 8-8 25-8-25-25-8 25-8z"/><path d="M120 124V91l-8 8z" fill="currentColor" stroke="none"/><circle cx="120" cy="91" r="4.5"/></g><path d="M120 58l8 25-8 8-8-8z" style="fill:var(--red)"/></symbol>
+    <symbol id="a-crossing" viewBox="0 0 240 180"><g fill="none"  stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round" style="stroke:var(--draw-soft)"><path d="M10 56c18-4 37-3 55 2M174 58c18-5 37-5 56-1"/><path d="M15 55l5-12 5 12 6-16 6 18 6-13 6 14M190 57l5-13 5 12 6-17 6 18 6-12 6 13"/><path d="M12 145c30-8 56-11 79-8M149 137c25-1 51 2 79 8"/><path d="M18 155c36-7 68-7 96-1M139 154c29-4 57-3 86 2"/><path d="M117 159c3-20 4-34 3-44" stroke-dasharray="2.5 5"/><text x="30" y="108"  stroke="none" font-family="Georgia, serif" font-size="8" style="fill:var(--draw-soft)">4</text><text x="61" y="132"  stroke="none" font-family="Georgia, serif" font-size="8" style="fill:var(--draw-soft)">9</text><text x="197" y="111"  stroke="none" font-family="Georgia, serif" font-size="8" style="fill:var(--draw-soft)">12</text></g><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M10 58c22 2 43 1 62-3 13-3 22-10 31-18M137 38c11 13 23 20 37 20 20 0 38-2 56 1"/><path d="M101 113h38c-4 8-10 12-19 12s-15-4-19-12z"/><path d="M120 112V82l-14 27h14m2-25 14 25h-14"/><path d="M68 111h13v18H68zM66 129h17M74.5 111V98"/><path d="M67 98h15l-3-6H70z"/><path d="M170 128h16M178 107v21"/><path d="M115 128c4 2 8 2 12 0M88 137c5 2 10 2 15 0M151 138c6 2 11 2 16 0"/></g><path d="M178 94l-9 18h18z" style="fill:var(--red)"/></symbol>
+    <symbol id="a-crew" viewBox="0 0 240 180"><g fill="none"  stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round" style="stroke:var(--draw-soft)"><path d="M12 45h20l5-12 5 12 7-17 7 17 7-13 7 13 8-18 8 18h142"/><path d="M12 137c34-5 68-5 102 0s70 5 114 0M17 149c35-5 68-5 101 0s68 5 105 0M25 159c31-4 61-4 91 0s62 4 94 0"/></g><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M28 103c18 17 45 25 88 25s75-8 96-25c-38 8-70 10-96 10s-57-2-88-10z"/><path d="M42 108c41 8 87 8 143 1"/><path d="M77 88l-13 42M108 88l-13 42M139 88l-13 42"/></g><g fill="currentColor"><circle cx="77" cy="75" r="6"/><path d="M69 84c4-5 12-5 16 0l3 20H66z"/><circle cx="108" cy="75" r="6"/><path d="M100 84c4-5 12-5 16 0l3 20H97z"/><circle cx="139" cy="75" r="6"/><path d="M131 84c4-5 12-5 16 0l3 20h-22z"/><circle cx="170" cy="75" r="6"/><path d="M162 84c4-5 12-5 16 0l3 20h-22z"/><path d="M61 130l5 1-3 13-7-1zM92 130l5 1-3 13-7-1zM123 130l5 1-3 13-7-1z"/></g><path d="M177 87l20 51m-22-52 4-2m18 54 7 14-8 3-2-16z"  fill="currentColor" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="color:var(--red)"/></symbol>
+    <symbol id="a-sonar" viewBox="0 0 240 180"><g fill="none"  stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round" style="stroke:var(--draw-soft)"><path d="M13 73c31-4 60-4 88 0s56 4 85 0 37-4 42-2"/><path d="M111 76c5 16 16 29 33 38" stroke-dasharray="3 5"/><path d="M111 76c1 26 14 48 40 65" stroke-dasharray="3 5"/><path d="M111 76c-3 39 11 67 42 84" stroke-dasharray="3 5"/><path d="M12 158c30 0 48-7 66-17 18-9 36-7 52 5 15 11 31 13 48 6 17-8 33-8 50-2"/><path d="M62 106c5-5 10-5 15 0-5 5-10 5-15 0zm15 0 5-4v8zm115 14c5-5 10-5 15 0-5 5-10 5-15 0zm15 0 5-4v8z"/></g><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M81 58h59c-5 9-15 14-29 14s-24-5-30-14z"/><path d="M96 57l5-17h28l6 17M104 40V29h18l4 11"/><path d="M13 72c30-3 58-3 85 1M126 73c33 4 67 3 102-2"/></g><path d="M126 151c9-10 17-15 25-13 7 2 12 1 18-4 5-4 11-2 18 6l7 12c-25-5-47-5-68-1z" style="fill:var(--red)"/></symbol>
+    <symbol id="a-ai" viewBox="0 0 240 180"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M25 18h176l18 18v118H25z"/><path d="M201 18v18h18M201 36l-10-5"/><circle cx="49" cy="132" r="4"/><path d="M47 132h4"/><path d="M184 106l13 31m-13-31-13 31m7-14h12M184 106v-9m-4 0h8"/><path d="M45 161l86-18 3 8-86 18zM131 143l11 1-8 7"/></g><g fill="none"  stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round" style="stroke:var(--draw-soft)"><path d="M42 62c9-12 21-15 33-8 9 6 8 17-1 23-10 6-20 3-27-4"/><path d="M144 98c8-11 20-13 31-7 8 5 8 14 1 20-9 7-20 4-27-3"/><path d="M49 132c18-36 53-62 105-77s42-3 42 3" stroke-dasharray="3 5"/><path d="M49 132c34-5 69-3 105 4s42-45 42-78" stroke-dasharray="3 5"/><path d="M49 132c24-18 51-25 81-20s50-15 66-54" stroke-dasharray="3 5"/><path d="M49 132c14-48 40-73 78-75s58-1 69 1" stroke-dasharray="3 5"/><path d="M91 48l5 5m0-5-5 5M155 67l5 5m0-5-5 5"/></g><path d="M49 132c28-20 55-34 80-42 27-9 43-17 51-27 7-8 12-16 16-25" fill="none"  stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="stroke:var(--red)"/></symbol>
+    <symbol id="a-sprint" viewBox="0 0 240 180"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path class="soft" d="M10 150c50-10 90 2 130-6s60-10 90-6"/><path d="M40 120c30-60 70-20 90-50s40-30 70-40"/><path d="M200 30l-14 2M200 30l-4 13" class="acc"/><circle cx="40" cy="120" r="5" fill="currentColor"/><circle cx="200" cy="30" r="6" class="accf" stroke="none"/><path d="M28 140h40M168 52v-30" class="soft"/></g></symbol>
+    <symbol id="a-advisory" viewBox="0 0 240 180"><g fill="none"  stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round" style="stroke:var(--draw-soft)"><path d="M10 70h71M159 70h71"/><path d="M12 82c21-3 40-3 58 0s36 3 54 0 37-3 56 0 33 3 48 1"/><path d="M176 77h42M170 84h52M165 92h60M173 100h44"/><path d="M36 166h168M48 151h144M61 136h118M74 121h92"/><path d="M40 180l53-84M200 180l-55-84"/></g><circle cx="197" cy="70" r="15" style="fill:var(--red)"/><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M10 70h171M212 70h18"/><path d="M79 99h28l-3 32H82zM85 104h16M88 104l1 22m9-22-1 22"/><path d="M81 118H70m10 6H69l-6 21M106 118h10m-11 6h12l6 21M84 132l-5 25m23-25 6 25"/><path d="M128 99h28l-3 32h-22zM134 104h16M137 104l1 22m9-22-1 22"/><path d="M130 118h-10m9 6h-11l-6 21M155 118h11m-12 6h13l6 21M133 132l-5 25m23-25 6 25"/><path d="M67 111h7v6h-7zM74 113h3c2 0 2 3 0 3h-3M162 111h7v6h-7zM169 113h3c2 0 2 3 0 3h-3"/><path d="M35 180h170M40 180l53-84m107 84-55-84"/></g></symbol>
+  </defs>
+</svg>
 
 <header class="site">
-  <div class="wrap site-inner">
-    <a class="brand" href="#top" aria-label="Platte Point Advisors home">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGgAAAAvCAYAAAAPQY91AAAWfmNhQlgAABZ+anVtYgAAAB5qdW1kYzJwYQARABCAAACqADibcQNjMnBhAAAAFlhqdW1iAAAAR2p1bWRjMm1hABEAEIAAAKoAOJtxA3VybjpjMnBhOjcwOWNiOWYxLWE0ODktNDJiZS04MDcyLWQwZGE1OWIyYjFiNQAAAAOTanVtYgAAAClqdW1kYzJhcwARABCAAACqADibcQNjMnBhLmFzc2VydGlvbnMAAAAAuGp1bWIAAABEanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5pbmdyZWRpZW50LnYzAAAAABhjMnNolqlFI7iVzNu+OrEyZUkcygAAAGxjYm9yo2lkYzpmb3JtYXRpaW1hZ2UvcG5namluc3RhbmNlSUR4LHhtcDppaWQ6ZjRhNTk2YzEtZWFkYy00NzhhLWJhZWYtY2NmMTlmZWU2YjQ5bHJlbGF0aW9uc2hpcGhwYXJlbnRPZgAAAeJqdW1iAAAAQWp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuYWN0aW9ucy52MgAAAAAYYzJzaNKJgyNnsevHYCSsCSNCjqQAAAGZY2JvcqJnYWN0aW9uc4KiZmFjdGlvbmtjMnBhLm9wZW5lZGpwYXJhbWV0ZXJzoWtpbmdyZWRpZW50c4GiY3VybHgtc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5pbmdyZWRpZW50LnYzZGhhc2hYIHPZYfq48N2SMVuhLeTmcUjC3VrADXRPrEf9eBnMqKFopGZhY3Rpb254HWNvbS5hbnRocm9waWMuY2xhdWRlLnByb3ZpZGVkanBhcmFtZXRlcnOheB9jb20uYW50aHJvcGljLm9yaWdpbi1jb25maWRlbmNlZ3Vua25vd25rZGVzY3JpcHRpb254ZkNsYXVkZSBwcm92aWRlZCB0aGlzIGZpbGUgYXQgdGhlIHJlcXVlc3Qgb2YgYSB1c2VyIGFuZCBtYXkgaGF2ZSBjcmVhdGVkIG9yIG1vZGlmaWVkIHRoZSBmaWxlIGNvbnRlbnRzLm1zb2Z0d2FyZUFnZW50oWRuYW1lZkNsYXVkZXJhbGxBY3Rpb25zSW5jbHVkZWT1AAAAyGp1bWIAAABAanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5oYXNoLmRhdGEAAAAAGGMyc2jem91mARR2LZ3ZIoT+53DmAAAAgGNib3KlY2FsZ2ZzaGEyNTZjcGFkTQAAAAAAAAAAAAAAAABkaGFzaFggHV84twTfWZCHYz9mSvnFC81x5ni0hWSwwO1GNw8IzKlkbmFtZW5qdW1iZiBtYW5pZmVzdGpleGNsdXNpb25zgaJlc3RhcnQYIWZsZW5ndGgZFooAAAI+anVtYgAAACdqdW1kYzJjbAARABCAAACqADibcQNjMnBhLmNsYWltLnYyAAAAAg9jYm9ypWNhbGdmc2hhMjU2aXNpZ25hdHVyZXhNc2VsZiNqdW1iZj0vYzJwYS91cm46YzJwYTo3MDljYjlmMS1hNDg5LTQyYmUtODA3Mi1kMGRhNTliMmIxYjUvYzJwYS5zaWduYXR1cmVqaW5zdGFuY2VJRHgseG1wOmlpZDpiYzdiYjI3NC02MmRjLTRhZDAtODJiNi04MmRjNDlhMTMyZGFyY3JlYXRlZF9hc3NlcnRpb25zg6JjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggc9lh+rjw3ZIxW6Et5OZxSMLdWsANdE+sR/14GcyooWiiY3VybHgqc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5hY3Rpb25zLnYyZGhhc2hYIBtYYKACK+s/j108U3iT+IvGNgd0OMpq+w9pp6WSMnGdomN1cmx4KXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaGFzaC5kYXRhZGhhc2hYIJoI8FEibMR6hpXFACZlIJPs7p1XOR3Ru619gwGDtceldGNsYWltX2dlbmVyYXRvcl9pbmZvo2RuYW1lb0FudGhyb3BpYyBGaWxlc2d2ZXJzaW9uZTEuMC4wa3NwZWNWZXJzaW9uZTIuNC4wAAAQOGp1bWIAAAAoanVtZGMyY3MAEQAQgAAAqgA4m3EDYzJwYS5zaWduYXR1cmUAAAAQCGNib3LShFkCEqIBJhghWQIKMIICBjCCAY2gAwIBAgIUQOWgCu7COdC+uIP6BkIFPWdVEwAwCgYIKoZIzj0EAwMwSTEXMBUGA1UEChMOQW50aHJvcGljLCBQQkMxLjAsBgNVBAMTJUFudGhyb3BpYyBDb250ZW50IENyZWRlbnRpYWxzIFJvb3QgQ0EwHhcNMjYwODA3MTg0MzU2WhcNMjgwODA2MTk0MzU2WjBEMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEpMCcGA1UEAxMgQW50aHJvcGljIENsYXVkZSBDb250ZW50IFNpZ25pbmcwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAASYegpry1AYBRTVNL1CpTlbROnY3dey+UrsF9C3phYrATN3ZHf93Mo8RQN0KOUuOn19P4oWNFWe5n2/She9N7eTo1gwVjAOBgNVHQ8BAf8EBAMCB4AwFQYDVR0lBA4wDAYKKwYBBAGD6F4CATAMBgNVHRMBAf8EAjAAMB8GA1UdIwQYMBaAFM5R4gSBTmRbI/jjxM+aPpzB11zCMAoGCCqGSM49BAMDA2cAMGQCMDFzHRSeAXrSy1WOzkbhPZ6Km2wGTmZ/2gK18k8BQGXyqz88Rdrz6CTX9flAnYNVxgIwcF9c3fVhqmJKpi+UhasNUMko69cyX6STPfta3Q8EjyzDjzoyrol46FP6VFHhvUcJoWNwYWRZDZ4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD2WEA+eQi+NyShZFGdMOyd6iZcsVYCFOtr6uKWt0veyAnm1n7dXQrrZAWpc5gFbVR2MVvCr6mMl7ejMG+aqrahBwsviPCCRAAACIdJREFUeF7tW2tsVMcZPTP3sbve9WPXPGISYwwiAQWkKJFoq4SolSJSESlKqlSkjdQ/bdpKEeqfVgK1TYtUCYFVNykvlaS4hQZMCSSFlLZqBCU0IYhIeaIkCgnYgME2a2cf3sd9TTVz7138ovZm7+7eJT7SCtky9t05c8535vtmCWOMYQa+BfXtk81AQK75dWAMY02AGwIpvC1CCMBfNQpSUxZXIMN2ZUKl6S27+H+W87OkpkjzPUFCHZYlVEDoREfO9V+FnkyCmQYsXQczDFBFBVFkUFmBGotBjcYmEMlM0/6dPleYbwlinBSwMSrJx68h/ek5JM++j8RHHyJzsRf5wX7oqZQghnGCTBNEUUBlGYQTFI0iOHcuwu2L0Lj0TjQsvROR9oWQwuECaQWyJtkA1YbvCOLEjN7VuSt9GPzva+g//irSn32KzOVLYJpWUBRVFBBJsuuMowhmcQtkALNgGaZNHFciY4KYcGsbGpYuRcuDqxG9ZwWUhgbBg70puHX6Jzv5jiAXgydPoO/oEcRPn0Luap9YfKoGQFXVJlCsKF9zhwwXYzPCdRtzwEkw8zkw3QAoRf3CRZh13/247ZHHUH/7HdUWzAT4iiAzl0P/sX+jZ+8exN98QyykFKoDVRVBBleAeJUK6iQ7Xt5yOfF3eJ1q+eZqtD3xPUTvuqfUv+AZqkwQX3B77c3MCK784+/oP/aqqAlyJAxCqG07XpByI1AeFCgsw4AxkoLaGMWtjz6GWV+797pSqxjTq0cQX/hxXi/qjw/8nydCIo06IrobpApEVYegUeQwQ3cOkkQcL91CXTWIOE/soMEfyGIiFQpMsqnKjYp3EkQMliSkT51EfPdOWFqex6by2tgXBVeMaUKZewvmPPVTqK1t4mvw1FghVFZBlglQCcOHunGlYwOsbFYcJv3cr+Vq4kEisGARbtv4DELL7gKzzOl3MUpEZQhy0xelGHx+Kwa2d4KGQsLn/UyOC14XrUwGNBzGrb/pRP1936iY3VWGIMe7B5/biv5nN0FqavIuMlcKkgSWz4tgM/+3OxC59+sVIan8BHH1EILhF/eib+PToOGIU288OM9UGEJJmgaprg6tz+xE3fK7y05SeQlyG50AdNENoBCHxHKea8oNSkXriAaDkGPN9iGujKGhvAR9WeC4RDlQnpjtKIRpeeT+dRgsk6l95YwHdwNDB21tQ3DlA7YrlOEgWx6CeCiQJGS6u5DY/CsQXnecTvFNBcZAZAmxHd1Q715RlnrkvcU5ic04fw7xH64BTMP26FquOzcClcBGUlCWLEds+wsgqmr/pIdK8n7w4TxcumsbWCoByLJol9jd6JvsxXt2kXroZ99G9sgBmxiPncJbBTnq0c68gfiPHr/ew7oZ1eOAESLOR/SWeZj1l1cgN8/2VEXe1iC+g0TXwEL92nUgwaDnO8ovEKbALEiSBJW/T02DrGvCJCzTBJWk6+OKEuCtgr4EGD+w5RhMpaHpBkIEiEWbCqtgcqIoLYkobxXES0xqGFYuPepm2s0Bt4wqst3hfvfCAF7+22G8+8476O3pRTabRWM0ipZ587DqwVX49po1iDXbt4l4v7Ewpi8S3ijIOQMwLYfUpu/C6u8BlICwuloHHwmZDFAoQVACXh/Q8NyHKZzsSWAkmweVKAKBACghMC0LmqbBsiy0LWjDU2vX4vtP/kAsAf8eV1Ox8IYgZ4ygv3cC6S0/BlE5OWLvFPs8voPBgAaZ4FreQucHI9j/WRY5iyCsSpB422fckNElIZfLCVU98q1HsamjA7PnzBaWx2tWMfDG4pxorb9/gldIQFbtf2sZDDAthqYAwelBDevfSuGDYQMNqgx+SctkTCz4eLjfU1UVoVAIL714CL09Pejasxutra1Fk+SBguyyyQwNqV8/DLPvnGNvtakeMXYXlsQQDQdxqDePdWdSSBsMEYXAKNK1ZUVGMpHE4sWLsWv3n3DHkiVFkVQ6QU79sa5dwsjzP7NHwkJRtUgQEQXdYgyN4TrsPPEeNrw5IKxMpXYt+iKQZRnJZBIL2hfg4MsvoXX+/EIUnwqlE+RCWNpkIbR2wFXDZz781bl5MzZ2/A5hVRYTEnFZtQS4JC1bvgwvdHejZV7LtIKDdwTVOPj24uWbWTqe/uUGbPv9VjQ11IN5OL7iJH0+/DlWfPUr2HdgPxobG6ckyQOCbNUYH+2CefV1QAnXXLw2TIZwEBjOSVj/h0/w1yOn0dQUca5SlCidceAkDQ8N4YFVq/DHP3chEon8X5JKJMixNGYh98+HYV45CSh8pO3/BOdceRMk1IcJPr5s4SddOs70SGhqqINpFpkGigAnKR6PY/VDq7Frz24EVPWGJHlDkJlF9uhDYKnzgMTPQN7uOi/hXjDiTxhSAVkCDr9l4hcHDFwdBhpCDEYZyXHhkrTmO49jy/ZtUBRl0nQ36TmIn3qnBydiiw9PZZxboW5Y8B94sVckQOXvmgAXBhiePWpg3ykLMgXqg4BRIfEbhoFYLIb9+7ph6Aa27Ngmzk3j20KTElR0S0INICTngYBkj7Z9irzO0J8APu5jOHbWxCtvW7g8xNDIu5y8xcZTnGePP/Uv4ofa5uZmHDp4EIlEAps7O9DevnAMSQWLc3tFF86fx8/XrUc+r9lETcOuGDPBEp/YtcfHZyDNAJJZ4NIQg6YDdQFbTeVxtKkJcsHtbWBgACvvX4k9+/aKLoSrpAkKSqfT+M/x48hmspDkIm5+SiFfk8PBr+fzmsNJkQiQHQEyPlA7FwIXyFB8aEJ5mUAQL15z5swVzT4+dLI/TjgVRHNkqh+qPpy3IoJC9Z+mADEzAlAX5p+JGqu8CSkun8/jYu9F52Pr05fpDEoDn84Gg0HRBhpNUokxewblRokxewZeY3yCnlGQz1H8DHYGFcX/ACNrXMjYUinLAAAAAElFTkSuQmCC" alt="Platte Point Advisors logo: sunrise over Platte Bay">
-      <span class="divider" aria-hidden="true"></span>
-      <span class="name"><strong>Platte Point Advisors</strong><span>Clear direction. Sound advice.</span></span>
+  <div class="wrap bar">
+    <a class="brand" href="#home" aria-label="Platte Point Advisors home">
+      <img src="images/logo-mark.svg" alt="Platte Point Advisors logo: sunrise over Platte Bay">
+      <span class="rule" aria-hidden="true"></span>
+      <span><b>Platte Point Advisors</b><i class="quote">Clear direction. Sound advice.</i></span>
     </a>
-    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="primaryNav">Menu</button>
-    <nav class="primary" id="primaryNav" aria-label="Primary">
-      <a href="#moments">When Leaders Call</a>
-      <a href="#engage">How We Work Together</a>
+    <button class="menu" id="menuBtn" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="main" id="nav" aria-label="Main">
+      <a href="#services">How I Help</a>
       <a href="#ai">AI</a>
-      <a href="#sectors">Industries</a>
-      <a href="#proof">About</a>
-      <a href="#memo">Insights</a>
-      <a class="btn" href="#invite">Talk through a decision</a>
+      <a href="#about">About</a>
+      <a class="btn" href="#contact">Talk through a decision</a>
     </nav>
   </div>
 </header>
 
-<main id="top">
-  <section class="hero" aria-labelledby="hero-title">
-    <div class="wrap hero-content">
-      <p class="label">Independent technology leadership · Serving clients nationally</p>
-      <h1 id="hero-title">Senior CIO judgment when a technology decision <em>can't wait.</em></h1>
-      <p class="sub">For CEOs, CFOs, and boards facing a consequential technology call without a CIO at the table: an AI strategy, a major vendor, a merger, a leadership gap. Independent of every vendor, and accountable only to your business.</p>
-      <div class="actions">
-        <a class="btn" href="#invite">Talk through your decision</a>
-        <span class="assure">30 minutes. No pitch deck.</span>
-      </div>
-      <div class="horizon" aria-hidden="true"><span>Your Platte Bay sunrise photo can sit along this horizon</span></div>
-    </div>
-  </section>
-
-  <section class="indep" aria-label="Independence">
-    <div class="wrap indep-inner">
-      <span class="indep-badge">Vendor-independent</span>
-      <p>No referral fees, resale margins, or implementation-partner kickbacks. Ever. The only thing I sell is judgment.</p>
-    </div>
-  </section>
-
-  <section class="band" id="moments" aria-labelledby="moments-title">
+<main>
+<!-- ============ HOME ============ -->
+<section class="page" data-page="home">
+  <div class="hero">
+    <img class="scene" src="images/home-hero.jpg" alt="The sun on the Lake Michigan horizon, seen across the Platte River and the dunes at Platte Point" fetchpriority="high">
+    <div class="shade" aria-hidden="true"></div>
     <div class="wrap">
-      <div class="head">
-        <p class="label">When leaders call</p>
-        <h2 id="moments-title">It usually starts with a question you can't answer yet.</h2>
-        <p>Open any of these to see how I'd approach the first 48 hours.</p>
-      </div>
-      <div class="moments">
-        <details>
-          <summary>The board asks, "What's our AI strategy?" and the meeting is in two weeks.<span class="toggle">First 48 hours</span></summary>
-          <div class="first48"><p>I'd sit with you and two or three leaders to list where AI is already in use, officially or not. Then I'd draft a one-page position: three uses worth funding, what they'd really cost to run, and the governance the board will ask about.</p></div>
-        </details>
-        <details>
-          <summary>Your core or ERP vendor wants a seven-year renewal, and nobody on your team knows how to price or benchmark it.<span class="toggle">First 48 hours</span></summary>
-          <div class="first48"><p>I'd read the proposal and contract terms, build a total cost over the full term, and list the assumptions the vendor is counting on you not to test. You'd get the questions to put to them and a clear read: sign, renegotiate, or compete it.</p></div>
-        </details>
-        <details>
-          <summary>Your board, auditors, or examiners are asking hard questions about cybersecurity, resiliency, or audit readiness, and they'll be back.<span class="toggle">First 48 hours</span></summary>
-          <div class="first48"><p>I'd review the findings and questions on the table, your current policies, and your last disaster-recovery test. You'd get an independent read on where you really stand, what to fix first, and how to present it before they return.</p></div>
-        </details>
-        <details>
-          <summary>Your CIO just resigned, with three projects and two contract renewals in flight.<span class="toggle">First 48 hours</span></summary>
-          <div class="first48"><p>I'd meet the IT leads and inventory what's in flight. I'd find the renewals with notice deadlines, so nothing auto-renews on bad terms, and give your board a one-page continuity plan. Then we'd talk about the bridge to your permanent hire.</p></div>
-        </details>
-        <details>
-          <summary>The company has outgrown its IT manager, and decisions get made by whichever vendor called last.<span class="toggle">First 48 hours</span></summary>
-          <div class="first48"><p>I'd map the decisions currently in motion, who is making them, and what each one commits you to. You'd see which two need an executive call now and what a technology plan tied to your strategic plan would take.</p></div>
-        </details>
-        <details>
-          <summary>A merger is signed, and the systems have to come together without customers noticing.<span class="toggle">First 48 hours</span></summary>
-          <div class="first48"><p>I'd identify the systems that touch customers, money, and regulators, set the conversion principles, and flag the decisions that have to be made before day one. I've been through this eight times.</p></div>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <section class="band alt" id="jobs" aria-labelledby="jobs-title">
-    <div class="wrap">
-      <div class="head">
-        <p class="label">What leaders hire me to do</p>
-        <h2 id="jobs-title">Three jobs. One senior advisor.</h2>
-      </div>
-      <div class="jobs">
-        <article class="job">
-          <p class="label">Before the meeting</p>
-          <h3>Get you ready before the meeting.</h3>
-          <p>A high-stakes question, little time, no analysts. In about 48 hours you have a clear position, the traps already found, and the counter-arguments tested.</p>
-          <p class="payoff">You walk in calm.</p>
-        </article>
-        <article class="job">
-          <p class="label">Sparring partner</p>
-          <h3>Be your safe sparring partner.</h3>
-          <p>An idea you can't float to your team or board yet: replace the core, restructure IT, outsource, put AI to work. Test it with someone independent who has sat in the seat.</p>
-          <p class="payoff">Look foolish in private, airtight in public.</p>
-        </article>
-        <article class="job">
-          <p class="label">The heavy lifting</p>
-          <h3>Take the heavy lifting off your executives.</h3>
-          <p>The RFP, the IT budget, the roadmap, the AI policy. You can't spend 60 executive hours on it when your team is already underwater. I build it in days, with your leaders reviewing, not drafting.</p>
-          <p class="payoff">A budget the board won't shred.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="band" id="sectors" aria-labelledby="sectors-title">
-    <div class="wrap">
-      <div class="head">
-        <p class="label">Where leaders call me</p>
-        <h2 id="sectors-title">The same jobs, in the industries where the stakes run highest.</h2>
-      </div>
-      <div class="sectors">
-        <article class="sector">
-          <h3>Credit unions and regulated financial institutions</h3>
-          <p>Core platform evaluations, digital banking roadmaps, examiner and audit readiness, and independent vendor selection.</p>
-          <p class="cred">13 years as CIO of $1B+ financial institutions.</p>
-        </article>
-        <article class="sector">
-          <h3>Mid-market companies and private equity</h3>
-          <p>M&amp;A technology diligence, post-merger integration, and an executive referee when vendors push hard for a signature.</p>
-          <p class="cred">8 mergers and acquisitions integrated; experience at Pfizer and R.L. Polk.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="band alt" aria-labelledby="wait-title">
-    <div class="wrap waiting">
-      <div>
-        <p class="label">The cost of waiting</p>
-        <h2 id="wait-title" style="margin-top:14px">"Let's wait until next quarter" is a decision too.</h2>
-        <p class="lede">Doing nothing feels safe. In technology, it usually means someone else makes the decision for you.</p>
-      </div>
-      <ul>
-        <li><b>The vendor sets the timeline.</b><span>Their quarter-end becomes your deadline, and their engineers design what they sell.</span></li>
-        <li><b>Contracts renew on old terms.</b><span>Notice windows close quietly; multi-year renewals lock in at last year's price and leverage.</span></li>
-        <li><b>AI spreads without rules.</b><span>Staff adopt tools on their own, and your data goes with them.</span></li>
-        <li><b>Good people leave a leadership vacuum.</b><span>Your strongest IT staff are the first to get recruited away.</span></li>
-        <li><b>Integration costs compound.</b><span>Every month two systems run side by side is a month you pay for both.</span></li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="band" id="compare" aria-labelledby="compare-title">
-    <div class="wrap">
-      <div class="head">
-        <p class="label">What you stop doing</p>
-        <h2 id="compare-title">You don't need another deck. You need a sound decision.</h2>
-      </div>
-      <div class="compare-wrap">
-        <table class="compare">
-          <thead><tr><th scope="col">Instead of</th><th scope="col">You get</th></tr></thead>
-          <tbody>
-            <tr><td>Weeks of discovery before a big firm says anything useful</td><td>A clear position in days</td></tr>
-            <tr><td>Advice from the vendor who wants the deal</td><td>Independent judgment, with no stake in what you buy</td></tr>
-            <tr><td>Guarded, political conversations with colleagues</td><td>A confidential sparring partner</td></tr>
-            <tr><td>A firm that bills a markup for junior staff or account managers</td><td>Direct access to a 13-year CIO who has sat in the chair and managed $12M&ndash;$34M technology budgets</td></tr>
-            <tr><td>Months with nobody steering while you search for a CIO</td><td>A bridge to your permanent hire: projects stabilized while the search runs</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <section class="band alt" id="engage" aria-labelledby="engage-title">
-    <div class="wrap">
-      <div class="head">
-        <p class="label">How we work together</p>
-        <h2 id="engage-title">Each way of working fits a job.</h2>
-        <p>Fixed fees for defined work, retainers for ongoing leadership. Never hourly.</p>
-      </div>
-      <div class="engage">
-        <div class="eng">
-          <p class="job-of">The job: one consequential decision</p>
-          <h3>Decision Sprint</h3>
-          <p class="time">48 hours to 4 weeks · fixed fee</p>
-          <p>A vendor, a contract, an AI investment, a board question. You get a written recommendation and the reasoning behind it.</p>
-        </div>
-        <div class="eng">
-          <p class="job-of">The job: find the blind spots</p>
-          <h3>Targeted Assessment</h3>
-          <p class="time">2 to 6 weeks · fixed fee</p>
-          <p>Technology, spend, delivery, AI readiness, or due diligence on an acquisition, with a prioritized roadmap.</p>
-        </div>
-        <div class="eng">
-          <p class="job-of">The job: pressure-test my thinking</p>
-          <h3>Executive Advisory</h3>
-          <p class="time">Monthly · confidential</p>
-          <p>A standing sparring partner for the CEO or board, on call before the big calls.</p>
-        </div>
-        <div class="eng">
-          <p class="job-of">The job: fill the leadership seat</p>
-          <h3>Fractional or Interim CIO</h3>
-          <p class="time">Monthly retainer</p>
-          <p>A seasoned CIO at your executive table, or a bridge to your permanent hire.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="band proof" id="proof" aria-labelledby="proof-title">
-    <div class="wrap">
-      <p class="label">Results from my CIO and technology leadership roles</p>
-      <h2 id="proof-title">38 years in technology, 13 as a CIO on the executive team. Here's what it produced.</h2>
-      <div class="stats">
-        <div class="stat"><b>$1.5M a year</b><span>Saved by building a digital platform in-house instead of renting it</span></div>
-        <div class="stat"><b>$1.2M+ a year</b><span>Recovered by renegotiating core vendor contracts</span></div>
-        <div class="stat"><b>8</b><span>Mergers and acquisitions integrated without business disruption</span></div>
-        <div class="stat"><b>60%</b><span>Less live-agent demand after putting AI into production</span></div>
-        <div class="stat"><b>35%</b><span>Better on-time project delivery, with 40% less legacy technical debt</span></div>
-        <div class="stat"><b>0</b><span>Material findings in regulatory exams and audits</span></div>
-      </div>
-      <p class="footnote">Results from prior leadership roles. Client engagements are confidential.</p>
-    </div>
-  </section>
-
-  <section class="band" id="ai" aria-labelledby="ai-title">
-    <div class="wrap duo">
-      <div class="panel">
-        <p class="label">How I use AI</p>
-        <h3 id="ai-title">AI speeds up the research. The judgment stays mine.</h3>
-        <p>AI handles benchmarking, market scans, and first drafts, which is why you get answers in days. Your confidential information only goes into enterprise tools with contractual data protection, never public models, and every recommendation is mine and reviewed by me.</p>
-      </div>
-      <div class="panel" id="memo">
-        <p class="label">Sample decision memo</p>
-        <p class="memo-title">Evaluating an unsolicited $1.8M cloud ERP quote: the four traps to check first.</p>
-        <p>Two pages, not a hundred slides. This is what my work looks like.</p>
-        <a href="#memo">Read the sample memo</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="band alt" aria-label="Signature line">
-    <div class="wrap">
-      <figure class="signature">
-        <blockquote>Experience is knowing what technology can do. Wisdom is knowing what it should do for your business.</blockquote>
-        <cite>Jack Martin <span>· Founder and CEO</span></cite>
-      </figure>
-    </div>
-  </section>
-
-  <section class="band" id="invite" aria-labelledby="invite-title">
-    <div class="wrap invite">
-      <div>
-        <p class="tagline">Clear direction. Sound advice.</p>
-        <h2 id="invite-title">Facing a technology decision you can't afford to get wrong?</h2>
-        <p class="body">The first conversation is 30 minutes, directly with me. No pitch deck. When you book, I'll ask three questions so we use the time well:</p>
-        <ol class="three-q">
-          <li>What decision is on the table?</li>
-          <li>When does it have to be made?</li>
-          <li>What's the downside of getting it wrong?</li>
-        </ol>
-      </div>
-      <div class="contact-card">
-        <a class="btn" href="#invite" style="justify-self:start">Pick a time</a>
-        <div class="row"><b>E</b><span><span class="sel" id="email">jack.martin@plattepointadvisors.com</span><button class="copy" id="copyEmail" type="button">Copy</button></span></div>
-        <div class="row"><b>P</b><span class="sel">(810) 252-8848</span></div>
-        <div class="row"><b>W</b><span class="sel">plattepointadvisors.com</span></div>
-        <p style="font-size:0.85rem;color:var(--muted)">I take on a small number of clients at a time so each gets senior attention. If I'm not the right fit, I'll tell you and point you to someone who is.</p>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <div class="wrap foot">
-    <div>
-      <p class="tagline">Clear direction. Sound advice.</p>
-      <p style="margin-top:6px">Based in Traverse City, Michigan. Serving clients nationally.</p>
-      <p style="margin-top:6px">Named for a point on Platte Bay, Lake Michigan. The logo is sunrise over the bay.</p>
-    </div>
-    <div>
-      <p><a href="#invite">Make an introduction</a> · LinkedIn</p>
-      <p style="margin-top:6px">© 2026 Platte Point Advisors LLC</p>
+      <p class="label">Fractional and interim CIO · Serving clients nationally</p>
+      <h1>A seasoned CIO for companies that don't have one, or are between them.</h1>
+      <p class="sub">Executive technology leadership for owners and leadership teams, part-time or interim. Plus an independent second opinion on the big calls: AI, major vendor contracts, and transitions like a merger or new owners.</p>
+      <div class="acts"><a class="btn" href="#contact">Talk through your decision</a><span>30 minutes. No pitch deck.</span></div>
     </div>
   </div>
-</footer>
+
+  <section class="band deep what">
+    <div class="wrap what-grid">
+      <div><p class="label">What I do</p><h2>A CIO on your leadership team, for the time you actually need.</h2></div>
+      <div class="what-pts">
+        <p>A fractional CIO is a seasoned technology executive who sits on your leadership team part-time. You get the judgment and accountability of a CIO without the cost of a full-time hire.</p>
+        <ul>
+          <li><b>You set the terms.</b> Goals, hours, and duration are yours to define, and they flex as the business changes.</li>
+          <li><b>You work with me directly.</b> Not a junior team, not an account manager.</li>
+          <li><b>Vendor-independent.</b> No referral fees, resale margins, or kickbacks. Ever.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="head"><p class="label">How I help</p><h2>Three ways to work together.</h2></div>
+      <div class="grid3 offers">
+        <a class="eng lead" href="#fractional-cio"><span class="k">The leadership seat</span><h3>Fractional or Interim CIO</h3><span class="t">Set monthly fee</span><p>A seasoned CIO at your leadership table a few days a month, or full coverage after a departure while you hire your permanent leader.</p></a>
+        <a class="eng" href="#start"><span class="k">A good place to start</span><h3>Focused Engagement</h3><span class="t">Typically 2 to 6 weeks · priced up front</span><p>One decision or one area of your technology, looked at closely. You get a written recommendation and a plan your team can actually carry out.</p></a>
+        <a class="eng" href="#advisory"><span class="k">A sounding board</span><h3>Executive Advisory</h3><span class="t">Set monthly fee</span><p>A set monthly session with you or the person who leads your technology, plus a call before the big decisions. Advice and coaching; your team keeps running the work.</p></a>
+      </div>
+      <p style="margin-top:22px"><a href="#services">How each one works</a></p>
+    </div>
+  </section>
+
+  <section class="band mist topo">
+    <svg class="contours" data-topo="6" aria-hidden="true"></svg>
+    <div class="wrap">
+      <div class="head"><p class="label">Situations I'm called in for</p><h2>Sound familiar?</h2></div>
+      <div class="grid2">
+        <article class="job"><h3>Your IT leader just left, or you've never had one.</h3><p>I step in within days, keep projects and vendors on course, and help you hire the right permanent leader.</p></article>
+        <article class="job"><h3>Everyone's asking about AI, and you need a clear answer soon.</h3><p>You get a one-page position: where AI fits your business, the guardrails to put in place first, and a sensible next step.</p></article>
+        <article class="job"><h3>A vendor wants a seven-year contract, and nobody on your team has negotiated one like it.</h3><p>You get the full-term cost, the terms worth pushing back on, and a clear recommendation: sign, renegotiate, or compete it.</p></article>
+        <article class="job"><h3>New owners, a merger, or fast growth is changing everything.</h3><p>I line up your technology plan, vendor contracts, and leadership team so the business keeps moving without disruption.</p></article>
+      </div>
+      <p style="margin-top:26px"><a href="#situations">More situations I'm called in for</a></p>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <figure class="sig"><blockquote>Experience is knowing what technology can do. Wisdom is knowing what it should do for your business.</blockquote><figcaption><cite>Jack Martin</cite>, founder. 38 years in technology, 13 as a CIO on the executive team. <a href="#about">More about me</a></figcaption></figure>
+    </div>
+  </section>
+
+  <section class="band mist"><div class="wrap" data-invite></div></section>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="page" data-page="services">
+  <div class="phead"><div class="wrap"><div><p class="label">How I help</p><h1>Three ways to work together.</h1><p class="lede">Most clients either need a CIO in the seat, or need one critical business question answered well. Everything is priced up front and agreed with you in writing: usually a fixed fee for focused work and a set monthly fee for ongoing leadership. No surprise invoices.</p></div>
+    <svg class="ill" viewBox="0 0 240 180" aria-hidden="true"><use href="#a-compass"/></svg></div></div>
+
+  <nav class="jump wrap" aria-label="On this page"><a href="#fractional-cio">Fractional or Interim CIO</a><a href="#start">Focused Engagement</a><a href="#advisory">Executive Advisory</a><a href="#situations">Situations</a></nav>
+
+  <section class="band" id="sec-fractional-cio"><div class="wrap">
+    <div class="head"><p class="label">The leadership seat · set monthly fee</p><h2>Fractional or Interim CIO</h2>
+      <p class="lede">A fractional CIO is a seasoned technology executive who sits on your leadership team part-time. You get the judgment and accountability of a CIO without the cost of a full-time hire.</p></div>
+    <div class="fx-wrap"><table class="fx">
+      <thead><tr><th scope="col"><span class="sr">Question</span></th><th scope="col">Fractional CIO</th><th scope="col">Interim CIO</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Why companies hire it</th><td>Ongoing executive technology leadership, or leadership for a specific initiative</td><td>Executive accountability for technology during a transition: a leadership departure, a search, a merger, or new owners</td></tr>
+        <tr><th scope="row">Time commitment</th><td>Part-time, a set number of days each month</td><td>More involvement, scaled to what the transition needs</td></tr>
+        <tr><th scope="row">Accountability</th><td>Defined with you; can include owning the technology function</td><td>Clear ownership of the technology function until your permanent leader starts</td></tr>
+        <tr><th scope="row">Duration</th><td>Ongoing or project-based, often 6 to 18 months</td><td>A defined transition, often 3 to 9 months</td></tr>
+        <tr><th scope="row">Your team</th><td>I lead, advise, and develop your technology leaders, with the right people in the right seats</td><td>I work through your managers, who keep running day-to-day operations</td></tr>
+        <tr><th scope="row">End goal</th><td>Build or sustain executive technology capability</td><td>Hand off to the right permanent leader, with the organization ready</td></tr>
+        <tr><th scope="row">Best suited for</th><td>Companies that need senior technology leadership without a full-time CIO</td><td>Companies in transition, with capable managers handling daily operations</td></tr>
+      </tbody>
+      <tfoot><tr><th scope="row">Set by you</th><td colspan="2"><b>Goals, hours, and duration are yours to define.</b> We agree on them at the start, put them in writing, and adjust as the business changes: more time during a crunch, less when things are steady.</td></tr></tfoot>
+    </table></div>
+
+    <div class="head" style="margin-top:64px"><p class="label">The difference it makes</p><h2>What changes when a CIO is at your table.</h2></div>
+    <div class="grid3">
+      <article class="job"><p class="label">What gets done</p><h3>Technology decisions get made on purpose.</h3><p>A plan tied to your strategic plan. Vendors and contracts managed. A budget you can defend. A team with a leader.</p></article>
+      <article class="job"><p class="label">How it feels</p><h3>You stop carrying decisions you don't feel equipped to make.</h3><p>Someone who has sat in the seat is accountable for technology, so you can get back to running the business.</p></article>
+      <article class="job"><p class="label">How you're seen</p><h3>Your people see technology in steady hands.</h3><p>So do your owners, your board, and your examiners. You walk into the next big meeting with answers, not apologies.</p></article>
+    </div>
+    <p class="cred" style="margin-top:36px;max-width:70ch">The best fractional engagements make themselves unnecessary. Part of the job is building a team that runs without me.</p>
+  </div></section>
+
+  <section class="band svc mist" id="sec-start"><div class="wrap">
+    <div class="head"><p class="label">A good place to start · priced up front</p><h2>Focused Engagement</h2><p class="muted">One decision or one area of your technology, scoped and priced up front. Typically 2 to 6 weeks. Many fractional engagements begin here, with no obligation to continue.</p></div>
+    <div class="grid2">
+      <article class="card" id="sec-decision-sprint"><h3>Common starting points</h3><ul class="ticks">
+        <li>Choosing a major system or vendor: due diligence, or help writing or reviewing an RFP</li>
+        <li>A large contract renewal or negotiation</li>
+        <li>An independent read on a decision you've mostly made</li>
+        <li>Your technology spend: where the money goes, and where it's leaking</li>
+        <li>How your technology team, or your outside IT provider, is organized and managed</li>
+        <li>An AI plan, budget, and roadmap (<a href="#ai">details</a>)</li>
+        <li>Getting your technology ready for a sale, a merger, or new owners</li>
+      </ul></article>
+      <article class="card" id="sec-assessments"><h3>What you get</h3><p>Working sessions with your leaders, then a written recommendation in plain business language and a prioritized plan sized to what your team can actually take on.</p><p>Your people bring the facts; I structure the work, lead the sessions, and recommend what to do next. You decide.</p><div class="roi"><b>$1.2M+ a year</b><span>recovered when I renegotiated major vendor contracts as a CIO</span></div></article>
+    </div>
+  </div></section>
+
+  <section class="band svc" id="sec-advisory"><div class="wrap svc-grid">
+    <svg class="ill" viewBox="0 0 240 180" aria-hidden="true"><use href="#a-advisory"/></svg>
+    <div class="prose">
+      <p class="label">A sounding board · set monthly fee</p>
+      <h2>Executive Advisory</h2>
+      <p>For owners and leaders who want an experienced, independent voice, whether you have a technology leader, an IT manager, or an outside IT provider. We meet on a set schedule each month, and you can call me before the big decisions.</p>
+      <p>I don't run the work. I advise, and I coach the people who do: your technology leader, or the executive who oversees IT, often a CFO or COO. Your team makes better calls and grows along the way. When new owners or a merger change everything, I can advise your leadership team through it.</p>
+      <p class="payoff">Ask the hard questions in private. Show up ready in public.</p>
+    </div>
+  </div></section>
+
+  <section class="band topo mist" id="sec-cio-areas"><svg class="contours" data-topo="6" aria-hidden="true"></svg><div class="wrap">
+    <div class="head"><p class="label">What I take on as your CIO</p><h2>The areas I lead.</h2><p class="muted">I set the direction, make the executive calls, and build the team to carry them out.</p></div>
+    <div class="grid4">
+      <div class="area ill"><svg viewBox="0 0 240 180" aria-hidden="true"><use href="#a-compass"/></svg><p class="q">"Technology isn't moving the business forward."</p><p>Technology strategy, digital initiatives, AI, and business intelligence, with a roadmap tied to your business goals.</p></div>
+      <div class="area ill"><svg viewBox="0 0 240 180" aria-hidden="true"><use href="#a-crossing"/></svg><p class="q">"We're about to bet the company on a big transition."</p><p>New owners, integrations, major system conversions, and high-stakes vendor selection and contracts.</p></div>
+      <div class="area ill"><svg viewBox="0 0 240 180" aria-hidden="true"><use href="#a-crew"/></svg><p class="q">"We don't have the right team or structure."</p><p>Organization design, clear leadership roles, the right people in the right seats, and recruiting your permanent technology leader.</p></div>
+      <div class="area ill"><svg viewBox="0 0 240 180" aria-hidden="true"><use href="#a-sonar"/></svg><p class="q">"I can't tell if IT is running well, or if we're exposed."</p><p>Project delivery discipline, core IT processes, budget accountability, reporting your leaders can actually read, cybersecurity, and risk.</p></div>
+    </div>
+  </div></section>
+
+  <section class="band" id="sec-situations"><div class="wrap">
+    <div class="head"><p class="label">Situations I'm called in for</p><h2>It usually starts with a question you can't answer yet.</h2><p class="muted">Open any of these to see how I'd start. Once we agree to work together and your key people can make time, here's what you'd have after the first 48 hours. I advise and lead; your team and outside partners do the hands-on work.</p></div>
+    <div class="moments" id="moments"></div>
+  </div></section>
+
+  <section class="band mist"><div class="wrap grid2">
+    <div><h3 style="margin-bottom:12px">Who I'm not the right fit for</h3><ul class="ticks"><li>Help-desk support or managed IT services</li><li>Staff augmentation or open-ended project work</li><li>Hands-on coding, system administration, or other individual-contributor work</li><li>Performing audits or security testing myself; I'll share what good practice looks like and help you hire the right firm</li></ul></div>
+    <div><h3 style="margin-bottom:12px">Continuity</h3><p>Every engagement is documented as it goes, so your team owns the work. When you need specialists, I help you choose the right firm and keep them accountable, with no referral fees.</p></div>
+  </div></section>
+  <section class="band"><div class="wrap" data-invite></div></section>
+</section>
+
+<!-- ============ AI ============ -->
+<section class="page" data-page="ai">
+  <div class="phead"><div class="wrap"><div><p class="label">AI strategy</p><h1>AI with a business case, not a press release.</h1><p class="lede">Your owners, your staff, and every vendor are pushing you to do something with AI. The real questions are executive ones: Which use cases fit the business? What will they cost to run, not just to pilot? What data, security, and risk controls do we need? Who owns the outcome?</p></div>
+    <svg class="ill" viewBox="0 0 240 180" aria-hidden="true"><use href="#a-ai"/></svg></div></div>
+  <section class="band"><div class="wrap">
+    <div class="head"><p class="label">AI Plan and Budget · a Focused Engagement · 4 to 6 weeks · priced up front</p><h2>Four steps from pressure to a funded plan.</h2></div>
+    <div class="grid4">
+      <div class="job"><h3>Where you stand</h3><p>What AI is already in use, officially or not, and what your data, people, and practices can support today.</p></div>
+      <div class="job"><h3>Use cases that fit</h3><p>Working sessions with your leaders to choose the few uses that fit your goals, your culture, and your appetite for change.</p></div>
+      <div class="job"><h3>Real cost and budget</h3><p>Licensing, usage fees, integration, data readiness, process change, and ongoing support. Most AI budgets miss the run costs.</p></div>
+      <div class="job"><h3>Roadmap and guardrails</h3><p>A sequenced plan with owners and measures, plus the simple policies and review points that fit your industry.</p></div>
+    </div>
+  </div></section>
+  <section class="band mist"><div class="wrap grid2">
+    <div class="card"><p class="label">Proof</p><div class="roi"><b>60%</b><span>less live-agent demand after deploying an AI assistant in our contact center</span></div><p>As a technology executive I worked with leadership to choose and prioritize AI uses, launched enterprise AI tools, and built AI into our applications. That work also sped up loan approvals. I've since built AI budgets and roadmaps with other leadership teams.</p></div>
+    <div class="card"><p class="label">Sized to your business</p><p>Most companies don't need a big leap in AI maturity. They need a few practical steps their team can actually take. The plan fits your culture, your budget, and your regulatory requirements.</p><p>Afterward, I can stay on as your fractional CIO to help your team put it in place and build the habits that make it stick.</p></div></div>
+  </div></section>
+  <section class="band"><div class="wrap" data-invite data-q="Facing an AI decision you can't afford to get wrong?"></div></section>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="page" data-page="about">
+  <section class="band"><div class="wrap meet about-hero">
+    <div class="photo-frame" style="max-width:360px"><img class="photo" src="images/about-portrait.jpg" alt="Jack Martin, founder of Platte Point Advisors"></div>
+    <div class="prose">
+      <p class="label">Who you'd be working with</p>
+      <h1>I started by writing code. I spent the last 13 years on the executive team, deciding what it should do.</h1>
+      <p>Thirty-eight years in technology have taught me that every major shift forces you to relearn the playbook—and reinventing myself through each one has been the best part of the job. I built software before office PCs were networked, watched Mosaic (the first web browser) and the internet rewrite how businesses reach customers, kept a bank steady through the 2008 financial crisis, moved core systems to the cloud and onto mobile, and shifted an entire workforce remote overnight in 2020 with zero downtime. Along the way, I've been through six mergers and acquisitions from both sides of the table—as the buyer and as the company being bought—and led the technology side as an executive. Now I'm helping leadership teams navigate the biggest shift yet: AI.</p>
+      <p>Every one of those waves raised the same questions your team is asking today: What should we do? What will it really cost? Who will make it work?</p>
+    </div>
+  </div></section>
+
+  <section class="band mist"><div class="wrap grid2 lead-grid">
+    <div><p class="label">How I lead</p><h2>Clarity, trust, and room to run.</h2></div>
+    <div class="prose">
+      <p>Great teams don't need micromanagement. I believe in treating people with genuine respect, giving them straight answers, and making sure everyone understands the why behind what we're building. From there, I empower people to take real ownership and calculated risks, keeping smart guardrails in place so they can stretch, learn fast, and recover quickly when things don't go as planned.</p>
+      <p>I also coach. I share my reasoning, let my leaders make the call, and talk it through with them afterward. In a fractional role, that matters most: when I step away, the judgment stays with your team.</p>
+    </div>
+  </div></section>
+
+  <section class="band deep">
+    <div class="wrap">
+      <p class="label">Results from my CIO and technology leadership roles</p>
+      <h2 style="margin-top:14px;font-size:clamp(1.7rem,3.3vw,2.5rem);max-width:26ch">The impact, in numbers.</h2>
+      <div class="stats">
+        <div class="stat"><b>13 years</b><span>Partnering with the CEO and board to shape company strategy and tie technology to business goals</span></div>
+        <div class="stat"><b>6</b><span>Mergers and acquisitions from both sides of the table, including leading the technology integration</span></div>
+        <div class="stat"><b>$1.2M+ a year</b><span>In recurring savings from renegotiating major vendor contracts</span></div>
+        <div class="stat"><b>25 → 45</b><span>Scaled the technology team, built its leadership bench, and created an in-house software engineering group</span></div>
+        <div class="stat"><b>60%</b><span>Reduction in live-agent call volume after launching an AI assistant in our contact center</span></div>
+        <div class="stat"><b>35%</b><span>Improvement in on-time project delivery after building a project management office from scratch</span></div>
+      </div>
+      <p style="margin-top:32px;font-size:.84rem;color:var(--bay-muted)">Results from prior leadership roles. Client engagements are confidential.</p>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="head"><p class="label">Where I've done this work</p><h2>The industries where the stakes run highest.</h2></div>
+      <div class="grid2">
+        <article class="card"><h3>Credit unions and regulated financial institutions</h3><p>Core platform decisions, digital banking roadmaps, getting ready for examiner and audit questions, and independent vendor selection.</p><p class="cred">13 years as CIO of $1B+ financial institutions.</p></article>
+        <article class="card"><h3>Growing, owner-led, and private equity-backed companies</h3><p>Getting the technology basics right, choosing and negotiating with vendors, building a small team that fits, and getting ready for growth, a sale, or new owners.</p><p class="cred">Earlier career in pharmaceutical research, automotive data, and commercial banking.</p></article>
+      </div>
+      <p class="muted" style="font-size:.92rem;margin-top:20px">Full career history on <a href="https://www.linkedin.com/in/jack-martin-43013318/" target="_blank" rel="noopener">LinkedIn</a>.</p>
+    </div>
+  </section>
+
+  <section class="band mist"><div class="wrap grid2 lead-grid">
+    <div><p class="label">How I use AI</p><h2>I use it every day, not just advise on it.</h2></div>
+    <div class="prose"><p>It's my research analyst, my first-draft writer, and my sparring partner. I've gone from asking it questions to having it build working software while I play product owner. In fact, I planned and built this website with AI tools. That practical experience shapes the AI plans I build with clients.</p></div>
+  </div></section>
+
+  <section class="band"><div class="wrap grid2 lead-grid">
+    <div><p class="label">Outside of work</p><h2>How I recharge</h2></div>
+    <div class="prose">
+      <p>Nothing matters more to me than the people in my life—my wife, our two grown kids, and the close friends who make every adventure better. Whether we're out on the boat on our lake, catching a live game together, or pushing our limits on bikes, trails, and golf courses, that's where life actually happens.</p>
+      <p>When I need to clear my head on my own, you'll find me chasing cold-water steelhead when the wind kicks up or sitting in the quiet of the fall woods. Protecting time outside of work—and keeping exercise front and center—isn't a luxury for me; it's non-negotiable, and it's why I show up sharp when it's time to execute.</p>
+    </div>
+  </div></section>
+
+  <section class="band topo mist"><svg class="contours" data-topo="6" aria-hidden="true"></svg><div class="wrap grid2 lead-grid">
+    <div><p class="label">The name</p><h2>Why Platte Point</h2>
+    <figure class="pp-map ill" aria-label="Sketch map of Platte Bay on Lake Michigan, with Platte Point marked where the Platte River meets the bay">
+      <svg viewBox="0 0 400 300" aria-hidden="true"><g fill="none"  stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round" style="stroke:var(--draw-soft)"><path d="M14 50c43-6 87 7 132-1M13 91c55-7 111 10 172 0M13 136c62-8 126 10 195 1M14 184c49-6 99 7 149 1M15 232c70-8 139 10 212 0M76 270c67-6 134 7 201 0"/><path d="M248 41q13-12 26 0 13-12 26 0M305 123q12-11 24 0M327 223q13-12 26 0 13-12 26 0"/><circle cx="221" cy="181" r="13"/></g><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M151 9c44 31 94 52 108 94 13 40-6 70-38 78 34 24 75 66 169 102"/><path d="M221 181c25-6 38-19 59-22 26-4 35-25 57-31 25-7 33-26 53-35"/></g><circle cx="221" cy="181" r="7" style="fill:var(--red)"/><g fill="currentColor" font-family="Newsreader, Georgia, serif" font-style="italic"><text x="23" y="284" font-size="15">Lake Michigan</text><text x="166" y="112" font-size="14">Platte Bay</text><text x="293" y="181" font-size="13">Platte River</text><text x="198" y="208" text-anchor="end" font-size="12">Platte Point</text></g></svg>
+    </figure></div>
+    <div class="prose">
+      <p>Platte Point sits on Lake Michigan where the Platte River meets the bay, tucked into the Sleeping Bear Dunes in Northern Michigan. It's a remarkably unspoiled stretch of shoreline—a place I return to often to fish, defined by clear water, quiet focus, and abundant wildlife from bald eagles and otters to deer along the banks. The logo is the sunrise over that bay, the same view that opens this site.</p>
+      <p>Those same qualities—clarity, direction, and calm—are what I aim to bring to every engagement. Good technology leadership isn't about adding noise; it's about cutting through complexity, seeing the horizon clearly, and staying oriented to true north when conditions shift.</p>
+    </div>
+  </div></section>
+  <section class="band"><div class="wrap" data-invite></div></section>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="page" data-page="contact">
+  <section class="band"><div class="wrap contact-grid">
+    <div>
+      <p class="label">Talk through a decision</p>
+      <h1>Bring me the decision. I'll handle the scheduling.</h1>
+      <p class="lede" style="margin-top:16px">Share a quick note on what's on your plate and who I should coordinate with. I read every message personally and will take care of setting up a time.</p>
+      <form class="cform" id="cform" novalidate>
+        <div class="f"><label for="f-name">Name <span class="req">(required)</span></label><input id="f-name" name="name" autocomplete="name" required></div>
+        <div class="f2">
+          <div class="f"><label for="f-email">Work email <span class="req">(required)</span></label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+          <div class="f"><label for="f-company">Company</label><input id="f-company" name="company" autocomplete="organization"></div>
+        </div>
+        <fieldset class="f">
+          <legend>Who should I coordinate with to set up a time? <span class="req">(required)</span></legend>
+          <label class="opt"><input type="radio" name="coord" value="me" checked> Reach out to me directly</label>
+          <label class="opt"><input type="radio" name="coord" value="assistant"> Coordinate with my assistant</label>
+          <div class="f2 asst" id="asst" hidden>
+            <div class="f"><label for="f-aname">Assistant's name</label><input id="f-aname" name="assistant_name"></div>
+            <div class="f"><label for="f-acontact">Assistant's email or phone</label><input id="f-acontact" name="assistant_contact"></div>
+          </div>
+          <div class="f" id="mephone"><label for="f-phone">Phone, if you'd rather I call</label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+        </fieldset>
+        <div class="f"><label for="f-when">Ideal timeframe or target date</label><input id="f-when" name="timeframe" placeholder="e.g., next week, mornings ET, or before our March planning meeting"></div>
+        <div class="f"><label for="f-what">What decision or challenge are you working through?</label><textarea id="f-what" name="decision" rows="4" placeholder="A sentence or two is plenty."></textarea></div>
+        <div class="hp" aria-hidden="true"><label>Leave this empty<input type="checkbox" name="botcheck" tabindex="-1"></label></div>
+        <p class="err" id="ferr" role="alert" hidden>Please add your name and a valid work email.</p>
+        <p class="err" data-fail role="alert" hidden>Something went wrong sending your note. Please email me directly at jack.martin@plattepointadvisors.com.</p>
+        <button class="btn" type="submit">Send note</button>
+        <p class="muted fine">Your note comes straight to me and is used only to reply.</p>
+      </form>
+      <div class="sent" id="sent" hidden tabindex="-1">
+        <h2>Note received. Thank you.</h2>
+        <p>I read every message personally and will reach out within two business days to coordinate a time for us to talk.</p>
+        <p>If you need me sooner, email <a href="mailto:jack.martin@plattepointadvisors.com">jack.martin@plattepointadvisors.com</a> or call (810) 252-8848.</p>
+      </div>
+    </div>
+    <aside class="next">
+      <h2>What happens next</h2>
+      <ol>
+        <li><b>I read your note myself.</b></li>
+        <li><b>Within two business days,</b> I reach out to you or your assistant with a few times that fit your timeframe.</li>
+        <li><b>We talk for 30 minutes.</b> No pitch deck. If I'm not the right fit, I'll tell you and point you to someone who is.</li>
+      </ol>
+      <div class="cc" style="margin-top:28px">
+        <p style="font-weight:600">Prefer to email or call?</p>
+        <div class="row"><b>E</b><span><span class="sel">jack.martin@plattepointadvisors.com</span><button class="copy" type="button">Copy</button></span></div>
+        <div class="row"><b>P</b><span class="sel">(810) 252-8848</span></div>
+      </div>
+    </aside>
+  </div></section>
+  <section class="band mist"><div class="wrap grid2">
+    <div class="prose"><h2>Know someone facing a big technology decision?</h2><p>Most of my work comes through introductions from people I've worked with. If a colleague is between CIOs, wrestling with AI, or about to sign a major contract, I'd be grateful for an introduction.</p><p><a class="btn ghost" href="#introduce">Make an introduction</a></p></div>
+    <div class="prose"><h2>Where I work</h2><p>Based in Traverse City, Michigan. Working with clients nationally, on site when it matters.</p></div>
+  </div></section>
+</section>
+
+<!-- ============ INTRODUCE ============ -->
+<section class="page" data-page="introduce">
+  <section class="band"><div class="wrap contact-grid">
+    <div>
+      <p class="label">Make an introduction</p>
+      <h1>Know someone facing a big technology decision?</h1>
+      <p class="lede" style="margin-top:16px">Most of my work comes through introductions from people I've worked with. Tell me a little about who you have in mind, and I'll take it from there with care.</p>
+      <form class="cform" id="iform" novalidate>
+        <h2 class="fh">About you</h2>
+        <div class="f2">
+          <div class="f"><label for="i-name">Your name <span class="req">(required)</span></label><input id="i-name" name="name" autocomplete="name" data-req></div>
+          <div class="f"><label for="i-email">Your email <span class="req">(required)</span></label><input id="i-email" name="email" type="email" autocomplete="email" data-req data-email></div>
+        </div>
+        <h2 class="fh">Who you're introducing</h2>
+        <div class="f2">
+          <div class="f"><label for="i-pname">Their name <span class="req">(required)</span></label><input id="i-pname" name="contact_name" data-req></div>
+          <div class="f"><label for="i-pco">Company and role</label><input id="i-pco" name="contact_company" placeholder="e.g., CFO, Acme Manufacturing"></div>
+        </div>
+        <div class="f"><label for="i-pcontact">Their email or phone</label><input id="i-pcontact" name="contact_reach" placeholder="Optional if you'd rather introduce us yourself"></div>
+        <div class="f"><label for="i-what">What's going on?</label><textarea id="i-what" name="situation" rows="3" placeholder="e.g., their IT director just left, or the board is pushing on AI"></textarea></div>
+        <fieldset class="f">
+          <legend>How would you like to handle the introduction? <span class="req">(required)</span></legend>
+          <label class="opt"><input type="radio" name="how" value="cc" checked> I'll send an email introducing us and copy you</label>
+          <label class="opt"><input type="radio" name="how" value="mention"> Please reach out to them and mention my name</label>
+          <label class="opt"><input type="radio" name="how" value="fyi"> Just a heads-up for now; don't contact them yet</label>
+        </fieldset>
+        <div class="hp" aria-hidden="true"><label>Leave this empty<input type="checkbox" name="botcheck" tabindex="-1"></label></div>
+        <p class="err" role="alert" hidden>Please add your name, a valid email, and the name of the person you're introducing.</p>
+        <p class="err" data-fail role="alert" hidden>Something went wrong sending this. Please email me directly at jack.martin@plattepointadvisors.com.</p>
+        <button class="btn" type="submit">Send introduction</button>
+        <p class="muted fine">This comes straight to me. I'll never share it, and I won't contact anyone you've asked me not to.</p>
+      </form>
+      <div class="sent" hidden tabindex="-1">
+        <h2>Thank you. That means a lot.</h2>
+        <p>I'll treat this introduction with care and let you know how it goes.</p>
+        <p>If it's easier, you can always copy me on an email directly: <a href="mailto:jack.martin@plattepointadvisors.com">jack.martin@plattepointadvisors.com</a>.</p>
+      </div>
+    </div>
+    <aside class="next">
+      <h2>What happens next</h2>
+      <ol>
+        <li><b>I read it myself</b> and send you a quick thank-you.</li>
+        <li><b>I follow your lead.</b> If you're making the introduction, I'll watch for your email. If you've asked me to reach out, I'll mention you by name.</li>
+        <li><b>I keep you posted.</b> Without sharing anything confidential, I'll let you know how it goes.</li>
+      </ol>
+      <div class="cc" style="margin-top:28px">
+        <p style="font-weight:600">The simplest way</p>
+        <p class="muted" style="font-size:.95rem">Send an email introducing us, with me copied:</p>
+        <div class="row"><b>E</b><span><span class="sel">jack.martin@plattepointadvisors.com</span><button class="copy" type="button">Copy</button></span></div>
+      </div>
+    </aside>
+  </div></section>
+</section>
+
+<!-- ============ PRIVACY ============ -->
+<section class="page" data-page="privacy">
+  <section class="band"><div class="wrap"><div class="prose privacy">
+    <p class="label">Effective November 24, 2026</p>
+    <h1 style="font-size:2rem">Privacy</h1>
+    <p>Platte Point Advisors is an assumed name of Seas The Day Fishing Co., LLC, based in Traverse City, Michigan. This statement explains what information this website collects and how I use it. In short: I collect only what you choose to send me, I use it only to respond, and I never sell it.</p>
+    <h2>What I collect</h2>
+    <ul class="ticks">
+      <li><b>What you send me.</b> When you use the "Talk through a decision" or "Make an introduction" forms, I receive the details you enter: your name, email address, phone number, company, role, and message. If you introduce someone, I receive the contact details you share about them.</li>
+      <li><b>Basic, anonymous site statistics.</b> The site uses privacy-friendly analytics that count visits and pages viewed without advertising cookies and without identifying you personally.</li>
+    </ul>
+    <h2>How I use it</h2>
+    <ul class="ticks">
+      <li>To reply to you, and schedule a conversation.</li>
+      <li>For an introduction, to follow up according to the preference you selected on the form.</li>
+      <li>To understand, in aggregate, which pages on the site are useful.</li>
+    </ul>
+    <p>I never sell, rent, or trade your information, and I won't add you to a marketing mailing list.</p>
+    <h2>Who else handles it</h2>
+    <p>A small number of service providers help run this site: website hosting, privacy-friendly analytics, and delivering form messages to my email. They handle your information only to provide those services to me. I may also disclose information if the law requires it.</p>
+    <h2>How long I keep it</h2>
+    <p>Messages are stored in my business email, protected by encryption and access controls, for as long as needed to respond and keep a record of our conversation. You can ask me to delete your information at any time.</p>
+    <h2>Your choices</h2>
+    <p>To see, correct, or delete what you've sent me, email <a href="mailto:jack.martin@plattepointadvisors.com">jack.martin@plattepointadvisors.com</a>. I'll respond promptly.</p>
+    <h2>Confidential information</h2>
+    <p>Please don't send confidential, proprietary, or sensitive business details through the website forms. A brief overview is plenty to get started; we'll cover specifics in conversation and, when appropriate, under a mutual non-disclosure agreement.</p>
+    <h2>Changes to this statement</h2>
+    <p>If I update this statement, I'll post the revised version here with a new effective date.</p>
+  </div></div></section>
+</section>
+</main>
+
+<footer><div class="wrap foot">
+  <div><p class="t">Clear direction. Sound advice.</p><p style="margin-top:6px">Based in Traverse City, Michigan. Serving clients nationally.</p><p style="margin-top:6px">Named for a point on Platte Bay, Lake Michigan. The logo is sunrise over the bay.</p></div>
+  <div><p><a href="#introduce">Make an introduction</a> · <a href="https://www.linkedin.com/in/jack-martin-43013318/" target="_blank" rel="noopener">LinkedIn</a> · <a href="#privacy">Privacy</a></p><p style="margin-top:6px">© 2026 Platte Point Advisors</p></div>
+</div></footer>
 
 <script>
-(function () {
-  var t = document.getElementById('menuToggle');
-  var n = document.getElementById('primaryNav');
-  t.addEventListener('click', function () {
-    var open = n.classList.toggle('open');
-    t.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
-  n.addEventListener('click', function (e) {
-    if (e.target.tagName === 'A') { n.classList.remove('open'); t.setAttribute('aria-expanded', 'false'); }
-  });
-  var c = document.getElementById('copyEmail');
-  c.addEventListener('click', function () {
-    var el = document.getElementById('email');
-    function sel() {
-      var r = document.createRange(); r.selectNodeContents(el);
-      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); c.textContent = 'Selected';
-    }
-    try { navigator.clipboard.writeText(el.textContent).then(function () { c.textContent = 'Copied'; }, sel); }
-    catch (e) { sel(); }
-  });
-})();
+{
+const moments=[
+ ["i-table","Big technology decisions keep landing on your desk, and nobody on your leadership team speaks technology.","I meet with you and your leadership team to list the technology decisions in motion and what each one commits you to.","A short written read on which decisions need an executive call now, and a recommended engagement to build a technology plan tied to your strategic plan."],
+ ["i-seat","Your IT leader just left, or you're creating the role for the first time, and the work can't wait for the search.","I meet your technology team and key vendors to understand what's in flight and what can't slip.","A 90-day continuity plan, a recommendation on interim coverage, and a clear picture of the role you should hire for."],
+ ["i-ai","Your owners or board ask, “What's our AI plan?” and you need an answer in the next few weeks.","I sit with you and two or three leaders to learn where AI is already in use, officially or not, and what the business needs.","The outline of a one-page position: where AI fits your business, the guardrails to put in place first, and a sensible next step. The finished page is ready for the meeting."],
+ ["i-contract","Your main software vendor wants a seven-year renewal, and nobody on your team has negotiated one like it.","I review the proposal and the key terms with your team.","The full-term cost, the questions to put to the vendor, the terms worth pushing back on, and a recommended approach: sign, renegotiate, or compete it."],
+ ["i-spend","Your technology bills keep climbing, and nobody can tell you what you're getting for them.","I walk through last year's technology spend and the largest contracts with your finance and technology leads.","The first places worth a closer look, and a scoped review to get you the full answer."],
+ ["i-shield","Your owners, auditors, or examiners are asking hard questions about cybersecurity, and they'll be back.","I review the questions on the table, your current policies, and your most recent audit or test results with your team.","An independent read on what to address first and how to present it. For the audit or testing itself, I share what good practice looks like and help you hire the right firm."],
+ ["i-merge","A merger is signed, new owners arrive, or growth is outrunning your systems, and the change has to happen without customers noticing.","I meet the leaders involved to understand the systems that touch customers, money, and regulators.","The decisions your leaders need to make before day one, and a recommended approach and team structure for the months of integration work that follow."]
+];
+const esc=s=>s.replace(/&/g,"&amp;").replace(/</g,"&lt;");
+const ico=id=>`<svg class="ill" viewBox="0 0 48 48" aria-hidden="true"><use href="#${id}"/></svg>`;
+document.getElementById("moments").innerHTML=moments.map(m=>`<details><summary>${ico(m[0])}<span>${esc(m[1])}</span><span class="tog">First 48 hours</span></summary><div class="ans"><p><b>How I'd start:</b> ${esc(m[2])}</p><p><b>After the first 48 hours:</b> ${esc(m[3])}</p></div></details>`).join("");
+const invite=(h1,q)=>`<div class="invite"><div><p class="tag">Your next step</p><${h1?"h1":"h2"} style="margin-top:10px;font-size:clamp(1.8rem,3.4vw,2.6rem)">${h1?"Bring me the decision.":(q||"Facing a technology decision you can't afford to get wrong?")}</${h1?"h1":"h2"}><p style="margin-top:14px;max-width:52ch">The first conversation is 30 minutes, directly with me. No pitch deck. Send a short note and I'll take care of setting up the time, with you or your assistant. It helps to think about three things before we talk:</p><ol><li>What decision is on the table?</li><li>When does it have to be made?</li><li>What's the downside of getting it wrong?</li></ol></div><div class="cc"><a class="btn" href="#contact" style="justify-self:start">Talk through your decision</a><div class="row"><b>E</b><span><span class="sel">jack.martin@plattepointadvisors.com</span><button class="copy" type="button">Copy</button></span></div><div class="row"><b>P</b><span class="sel">(810) 252-8848</span></div><p class="muted" style="font-size:.86rem">I take on a small number of clients at a time so each gets senior attention. If I'm not the right fit, I'll tell you and point you to someone who is.</p></div></div>`;
+document.querySelectorAll("[data-invite]").forEach(el=>el.innerHTML=invite(el.hasAttribute("data-h1"),el.getAttribute("data-q")));
+document.addEventListener("click",e=>{
+  const b=e.target.closest(".copy"); if(!b) return;
+  const t=b.previousElementSibling;
+  const sel=()=>{const r=document.createRange();r.selectNodeContents(t);const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent="Selected"};
+  try{navigator.clipboard.writeText(t.textContent).then(()=>b.textContent="Copied",sel)}catch(_){sel()}
+});
+const topoDraw=svg=>{
+  const W=svg.clientWidth||1200,H=svg.clientHeight||600,n=+svg.dataset.topo||6;
+  let p="";
+  for(let i=0;i<n;i++){
+    const y0=H*(i+.6)/n, a=18+i*3, f=.004+i*.0006, ph=i*1.3;
+    let d=`M0 ${y0.toFixed(1)}`;
+    for(let x=0;x<=W;x+=24){const y=y0+Math.sin(x*f+ph)*a+Math.sin(x*f*2.3+ph)*a*.35;d+=` L${x} ${y.toFixed(1)}`}
+    p+=`<path d="${d}" fill="none" stroke="currentColor" stroke-width="1.2"/>`;
+  }
+  svg.setAttribute("viewBox",`0 0 ${W} ${H}`);svg.innerHTML=p;
+};
+const topoRO=new ResizeObserver(es=>es.forEach(e=>topoDraw(e.target)));
+document.querySelectorAll("svg.contours").forEach(s=>topoRO.observe(s));
+const W3F_KEY="40925f5e-b773-463f-8fd6-4c962e5029b4";
+const sendForm=async(form,subject)=>{
+  const fail=form.querySelector("[data-fail]"); if(fail)fail.hidden=true;
+  const btn=form.querySelector("button[type=submit]");
+  if(W3F_KEY==="W3F_KEY_HERE"){form.hidden=true;const s=form.nextElementSibling;s.hidden=false;s.focus();return;}
+  const data=Object.fromEntries(new FormData(form).entries());
+  if(data.botcheck)return;
+  delete data.botcheck;
+  data.access_key=W3F_KEY; data.subject=subject; data.from_name="Platte Point Advisors website";
+  btn.disabled=true; const t=btn.textContent; btn.textContent="Sending…";
+  try{
+    const r=await fetch("https://api.web3forms.com/submit",{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify(data)});
+    const j=await r.json();
+    if(!j.success)throw new Error(j.message||"failed");
+    form.hidden=true;const s=form.nextElementSibling;s.hidden=false;s.focus();
+  }catch(_){ if(fail)fail.hidden=false; btn.disabled=false; btn.textContent=t; }
+};
+const cf=document.getElementById("cform");
+if(cf){
+  const asst=document.getElementById("asst"),mep=document.getElementById("mephone");
+  cf.addEventListener("change",e=>{if(e.target.name==="coord"){const a=e.target.value==="assistant";asst.hidden=!a;mep.hidden=a}});
+  cf.addEventListener("submit",e=>{e.preventDefault();
+    const n=cf.elements.name.value.trim(),em=cf.elements.email.value.trim(),ok=n&&/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em);
+    document.getElementById("ferr").hidden=!!ok; if(!ok)return;
+    sendForm(cf,"Talk through a decision: "+n+(cf.elements.company.value.trim()?" ("+cf.elements.company.value.trim()+")":""));});
+}
+const fi=document.getElementById("iform");
+if(fi){fi.addEventListener("submit",e=>{e.preventDefault();
+  const bad=[...fi.querySelectorAll("[data-req]")].some(i=>!i.value.trim()||(i.hasAttribute("data-email")&&!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(i.value.trim())));
+  fi.querySelector(".err").hidden=!bad; if(bad)return;
+  sendForm(fi,"Introduction from "+fi.elements.name.value.trim()+": "+fi.elements.contact_name.value.trim());});}
+const pages=[...document.querySelectorAll(".page")].map(p=>p.dataset.page);
+const navLinks=[...document.querySelectorAll("nav.main a")];
+const svcPages=["services"];
+const aliases=["fractional-cio","start","decision-sprint","assessments","advisory","cio-areas","situations"];
+const show=()=>{
+  const h=location.hash.slice(1); const alias=aliases.includes(h); const id=alias?"services":(pages.includes(h)?h:"home");
+  document.querySelectorAll(".page").forEach(p=>p.classList.toggle("on",p.dataset.page===id));
+  navLinks.forEach(a=>{const t=a.getAttribute("href").slice(1);const on=t===id||(t==="services"&&svcPages.includes(id));on?a.setAttribute("aria-current","page"):a.removeAttribute("aria-current")});
+  document.title=id==="home"?"Platte Point Advisors | Fractional and Interim CIO":"Platte Point Advisors · "+(document.querySelector(`.page[data-page="${id}"] h1`)?.textContent.slice(0,40)||id);
+  if(alias){requestAnimationFrame(()=>document.getElementById("sec-"+h)?.scrollIntoView())}else{window.scrollTo(0,0)}
+  document.querySelectorAll(`.page[data-page="${id}"] svg.contours`).forEach(topoDraw);
+};
+addEventListener("hashchange",show); show();
+const mb=document.getElementById("menuBtn"),nav=document.getElementById("nav");
+mb.addEventListener("click",()=>{const o=nav.classList.toggle("open");mb.setAttribute("aria-expanded",o)});
+nav.addEventListener("click",e=>{if(e.target.closest("a")){nav.classList.remove("open");mb.setAttribute("aria-expanded","false")}});
+}
 </script>
-
 </body>
 </html>
